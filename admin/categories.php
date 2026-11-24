@@ -1,0 +1,32 @@
+<?php
+require '_layout.php';$db=db();$id=(int)($_GET['id']??0);$error='';
+if($_SERVER['REQUEST_METHOD']==='POST'){
+ $id=(int)($_POST['id']??0);
+ if(isset($_POST['delete'])){
+  $s=$db->prepare('SELECT COUNT(*) FROM products WHERE category_id=?');$s->execute([$id]);$used=(int)$s->fetchColumn();
+  $s=$db->prepare('SELECT COUNT(*) FROM categories WHERE parent_id=?');$s->execute([$id]);$children=(int)$s->fetchColumn();
+  if($used||$children)$error='This category still contains products or subcategories. Move or remove them before deleting it.';
+  else{$db->prepare('DELETE FROM categories WHERE id=?')->execute([$id]);header('Location: categories.php?deleted=1');exit;}
+ }
+ else{
+  $name=trim((string)($_POST['name']??''));$parent=(int)($_POST['parent_id']??0)?:null;
+  if($name==='')$error='Enter a category name.';
+  elseif($parent===$id&&$id)$error='A category cannot be its own parent.';
+  else{
+   if($parent){$s=$db->prepare('SELECT parent_id FROM categories WHERE id=?');$s->execute([$parent]);if($s->fetchColumn())$error='Choose a top-level aisle as the parent.';}
+   if(!$error){$st=$db->prepare('SELECT name FROM categories WHERE id=?');$st->execute([$parent]);$parentName=$parent?$st->fetchColumn():'';$base=slug($parent?$parentName.' '.$name:$name);$newSlug=$base;$n=2;
+    while(true){$check=$db->prepare('SELECT id FROM categories WHERE slug=? AND id<>?');$check->execute([$newSlug,$id]);if(!$check->fetchColumn())break;$newSlug=$base.'-'.$n++;}
+    if($id)$db->prepare('UPDATE categories SET name=?,slug=?,parent_id=?,sort=? WHERE id=?')->execute([$name,$newSlug,$parent,(int)($_POST['sort']??0),$id]);
+    else $db->prepare('INSERT INTO categories(name,slug,parent_id,sort) VALUES(?,?,?,?)')->execute([$name,$newSlug,$parent,(int)($_POST['sort']??0)]);
+    header('Location: categories.php?saved=1');exit;
+   }
+  }
+ }
+}
+if(isset($_GET['edit'])){
+ $s=$db->prepare('SELECT * FROM categories WHERE id=?');$s->execute([$id]);$category=$s->fetch()?:['id'=>0,'name'=>'','parent_id'=>null,'sort'=>0];
+ if($_SERVER['REQUEST_METHOD']==='POST')$category=array_merge($category,['name'=>$name??'','parent_id'=>$parent??null,'sort'=>(int)($_POST['sort']??0)]);
+ $tops=$db->query('SELECT id,name FROM categories WHERE parent_id IS NULL ORDER BY sort,name')->fetchAll();ahead($category['id']?'Edit category':'Add category','categories.php');
+ ?><?php if($error): ?><p class="bad"><?=e($error)?></p><?php endif; ?><form method="post" class="fm"><?=csrf()?><input type="hidden" name="id" value="<?=$category['id']?>"><label>Category name<input name="name" required maxlength="120" value="<?=e($category['name'])?>"></label><label>Parent aisle<select name="parent_id"><option value="0">Top-level aisle</option><?php foreach($tops as $top)if($top['id']!=$id): ?><option value="<?=$top['id']?>" <?=$category['parent_id']==$top['id']?'selected':''?>><?=e($top['name'])?></option><?php endif; ?></select></label><label>Sort order<input type="number" name="sort" value="<?=e($category['sort'])?>"></label><button class="btn">Save category</button> <a href="categories.php">Cancel</a><?php if($category['id']): ?> <button class="btn ghost" name="delete" value="1" onclick="return confirm('Delete this empty category?')">Delete</button><?php endif; ?></form><?php afoot();exit;
+}
+ahead('Categories','categories.php');?><?php if(isset($_GET['saved'])): ?><p class="okm">Category saved.</p><?php endif; ?><?php if(isset($_GET['deleted'])): ?><p class="okm">Category deleted.</p><?php endif; ?><p>Categories are arranged as top-level aisles with subcategories. You can change a product’s aisle from its product editor.</p><p><a class="btn" href="?edit=0">+ Add category</a></p><table class="tb"><tr><th>Category</th><th>Products</th><th>Subcategories</th></tr><?php foreach($db->query('SELECT c.*,p.name parent,(SELECT COUNT(*) FROM products WHERE category_id=c.id) products,(SELECT COUNT(*) FROM categories x WHERE x.parent_id=c.id) children FROM categories c LEFT JOIN categories p ON p.id=c.parent_id ORDER BY COALESCE(p.sort,c.sort),COALESCE(p.name,c.name),c.name') as $c): ?><tr><td><a href="?edit=<?=$c['id']?>"><?=e($c['parent']?'— '.$c['name']:$c['name'])?></a><?php if($c['parent']): ?><small class="mut"> · <?=e($c['parent'])?></small><?php endif; ?></td><td><?=$c['products']?></td><td><?=$c['children']?></td></tr><?php endforeach; ?></table><?php afoot();

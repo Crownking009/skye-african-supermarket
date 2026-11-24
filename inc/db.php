@@ -25,7 +25,7 @@ function find($q='',$f=[],$limit=48){
  return $r;}
 function variants($ids){if(!$ids)return[];$o=[];foreach(db()->query('SELECT * FROM product_variants WHERE product_id IN('.implode(',',array_map('intval',$ids)).') ORDER BY product_id,sort') as $v)$o[$v['product_id']][]=$v;return $o;}
 function plabel($p){$u=' <small>/ '.e($p['unit_label']).'</small>';if($p['sold_by_type']=='variant')return '<small>from</small> '.money($p['base_price']);$o=(float)($p['old_price']??0);if($o>(float)$p['base_price'])return '<s>'.money($o).'</s> <b class="sale">'.money($p['base_price']).'</b>'.$u;return money($p['base_price']).$u;}
-function tile($p){$f='assets/products/'.$p['sku'].'.jpg';if(file_exists(__DIR__.'/../'.$f))return '<img src="'.e($f.'?v='.filemtime(__DIR__.'/../'.$f)).'" alt="'.e($p['name']).'" loading="lazy">';
+function tile($p){$f=product_image_path($p['sku']);if($f)return '<img src="'.e($f.'?v='.filemtime(__DIR__.'/../'.$f)).'" alt="'.e($p['name']).'" loading="lazy">';
  $c=[['#EFE6F6','#4B1670'],['#E0F2E8','#0E8A4B'],['#FDF0CF','#8A5A00']][crc32($p['top']??'')%3];
  return '<div class="ph" style="background:'.$c[0].';color:'.$c[1].'">'.e(mb_strtoupper(mb_substr($p['name'],0,1))).'</div>';}
 function setting($k,$d=null){static $c;if($c===null){try{$c=db()->query('SELECT k,v FROM settings')->fetchAll(PDO::FETCH_KEY_PAIR);}catch(Exception $x){$c=[];}}return $c[$k]??$d;}
@@ -38,7 +38,10 @@ function ensure_payment_col(){try{db()->query('SELECT payment FROM orders LIMIT 
  try{db()->query('SELECT 1 FROM testimonials LIMIT 0');}catch(Exception $e){try{db()->exec("CREATE TABLE testimonials(id INT AUTO_INCREMENT PRIMARY KEY,name VARCHAR(80) NOT NULL,rating TINYINT NOT NULL DEFAULT 5,body VARCHAR(600) NOT NULL,when_label VARCHAR(40),sort INT DEFAULT 0,active TINYINT(1) DEFAULT 1) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4");}catch(Exception $x){}}
  try{db()->query('SELECT 1 FROM hero_slides LIMIT 0');}catch(Exception $e){try{db()->exec("CREATE TABLE hero_slides(id INT AUTO_INCREMENT PRIMARY KEY,title VARCHAR(140) NOT NULL,subtitle VARCHAR(220),btn VARCHAR(40),link VARCHAR(255),color TINYINT DEFAULT 0,sort INT DEFAULT 0,active TINYINT(1) DEFAULT 1) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4");}catch(Exception $x){}}
 }
-function product_images($sku){$o=[];foreach(['','-2','-3'] as $x){$f='assets/products/'.$sku.$x.'.jpg';$p=__DIR__.'/../'.$f;if(file_exists($p))$o[]=$f.'?v='.filemtime($p);}return $o;}
+function product_image_path($sku,$n=1){$sku=preg_replace('/[^A-Za-z0-9_-]/','',(string)$sku);$suffix=$n>1?'-'.(int)$n:'';foreach(['jpg','png','webp','jpeg'] as $ext){$f='assets/products/'.$sku.$suffix.'.'.$ext;if(file_exists(__DIR__.'/../'.$f))return $f;}
+ if($n===1&&preg_match('/^CAT-(\d+)$/',$sku,$m)){foreach(['png','webp','jpg','jpeg'] as $ext){$f='assets/products/product-'.(int)$m[1].'.'.$ext;if(file_exists(__DIR__.'/../'.$f))return $f;}}
+ return null;}
+function product_images($sku){$o=[];for($n=1;$n<=3;$n++)if($f=product_image_path($sku,$n))$o[]=$f.'?v='.filemtime(__DIR__.'/../'.$f);return $o;}
 
 function shop_address(){return setting('address',SHOP_ADDRESS);}
 function wa_display(){$n=wa_number();return (strlen($n)==12&&substr($n,0,2)=='44')?'+44 '.substr($n,2,4).' '.substr($n,6):'+'.$n;}
