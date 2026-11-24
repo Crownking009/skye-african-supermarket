@@ -1,0 +1,367 @@
+﻿sku,name,category,subcategory,origin,sold_by_type,unit_label,base_price_gbp,"variants (label=price, comma separated)",min_qty,qty_step,age_restricted,stock,search_keywords,status
+SKY-0001,White Yam (Puna),Fresh Produce,Yams & Tubers,Nigerian,weight,kg,3.49,,0.5,0.5,No,50,white yam  puna  fresh produce yams & tubers nigerian isu puna,active
+SKY-0002,Water Yam,Fresh Produce,Yams & Tubers,Nigerian,weight,kg,3.20,,0.5,0.5,No,50,water yam fresh produce yams & tubers nigerian isu ewura,active
+SKY-0003,Cocoyam (Taro),Fresh Produce,Yams & Tubers,West African,weight,kg,3.30,,0.5,0.5,No,50,cocoyam  taro  fresh produce yams & tubers west african ede taro,active
+SKY-0004,Sweet Potato,Fresh Produce,Yams & Tubers,Pan-African,weight,kg,1.99,,0.5,0.5,No,50,sweet potato fresh produce yams & tubers pan-african,active
+SKY-0005,Cassava Tuber,Fresh Produce,Yams & Tubers,West African,weight,kg,2.99,,0.5,0.5,No,50,cassava tuber fresh produce yams & tubers west african manioc yuca,active
+SKY-0006,Fresh Turmeric Root,Fresh Produce,Yams & Tubers,Pan-African,weight,kg,8.99,,0.5,0.5,No,50,fresh turmeric root fresh produce yams & tubers pan-african,active
+SKY-0007,Fresh Ginger,Fresh Produce,Yams & Tubers,Pan-African,weight,kg,4.99,,0.5,0.5,No,50,fresh ginger fresh produce yams & tubers pan-african ata ile,active
+SKY-0008,Garlic Bulbs,Fresh Produce,Yams & Tubers,Pan-African,weight,kg,7.99,,0.5,0.5,No,50,garlic bulbs fresh produce yams & tubers pan-african,active
+SKY-0009,Ripe Plantain,Fresh Produce,Plantain & Bananas,West African,weight,kg,2.49,,0.5,0.5,No,50,ripe plantain fresh produce plantain & bananas west african dodo fry,active
+SKY-0010,Unripe Plantain,Fresh Produce,Plantain & Bananas,West African,weight,kg,2.49,,0.5,0.5,No,50,unripe plantain fresh produce plantain & bananas west african boli roast,active
+SKY-0011,Green Bananas (Matoke),Fresh Produce,Plantain & Bananas,East African,weight,kg,2.29,,0.5,0.5,No,50,green bananas  matoke  fresh produce plantain & bananas east african matooke,active
+SKY-0012,Sweet Bananas,Fresh Produce,Plantain & Bananas,Pan-African,weight,kg,1.69,,0.5,0.5,No,50,sweet bananas fresh produce plantain & bananas pan-african,active
+SKY-0013,Ugu (Fluted Pumpkin Leaves),Fresh Produce,Leafy Vegetables,Nigerian,piece,bunch,2.99,,1,1,No,50,ugu  fluted pumpkin leaves  fresh produce leafy vegetables nigerian pumpkin leaves,active
+SKY-0014,Bitter Leaf (Fresh),Fresh Produce,Leafy Vegetables,Nigerian,piece,bunch,2.99,,1,1,No,50,bitter leaf  fresh  fresh produce leafy vegetables nigerian onugbu ewuro,active
+SKY-0015,Waterleaf,Fresh Produce,Leafy Vegetables,Nigerian,piece,bunch,2.49,,1,1,No,50,waterleaf fresh produce leafy vegetables nigerian gbure,active
+SKY-0016,Scent Leaf (Efirin),Fresh Produce,Leafy Vegetables,Nigerian,piece,bunch,1.99,,1,1,No,50,scent leaf  efirin  fresh produce leafy vegetables nigerian nchanwu basil,active
+SKY-0017,Uziza Leaves,Fresh Produce,Leafy Vegetables,Nigerian,piece,bunch,2.49,,1,1,No,50,uziza leaves fresh produce leafy vegetables nigerian ziza,active
+SKY-0018,Spinach (Efo Tete),Fresh Produce,Leafy Vegetables,West African,piece,bunch,1.99,,1,1,No,50,spinach  efo tete  fresh produce leafy vegetables west african amaranth callaloo,active
+SKY-0019,Jute Leaves (Ewedu),Fresh Produce,Leafy Vegetables,Nigerian,piece,pack,2.99,,1,1,No,50,jute leaves  ewedu  fresh produce leafy vegetables nigerian molokhia,active
+SKY-0020,Collard Greens (Sukuma Wiki),Fresh Produce,Leafy Vegetables,East African,piece,bunch,1.99,,1,1,No,50,collard greens  sukuma wiki  fresh produce leafy vegetables east african kale,active
+SKY-0021,Fresh Okra,Fresh Produce,Leafy Vegetables,West African,weight,kg,5.99,,0.5,0.5,No,50,fresh okra fresh produce leafy vegetables west african okro lady fingers,active
+SKY-0022,Garden Egg,Fresh Produce,Leafy Vegetables,Nigerian,weight,kg,5.49,,0.5,0.5,No,50,garden egg fresh produce leafy vegetables nigerian aubergine eggplant,active
+SKY-0023,Scotch Bonnet (Ata Rodo),Fresh Produce,Peppers & Vegetables,West African,weight,kg,8.99,,0.5,0.5,No,50,scotch bonnet  ata rodo  fresh produce peppers & vegetables west african habanero hot pepper,active
+SKY-0024,Red Pepper (Tatashe),Fresh Produce,Peppers & Vegetables,Nigerian,weight,kg,4.99,,0.5,0.5,No,50,red pepper  tatashe  fresh produce peppers & vegetables nigerian bell pepper,active
+SKY-0025,Bell Peppers Mixed,Fresh Produce,Peppers & Vegetables,Pan-African,weight,kg,3.99,,0.5,0.5,No,50,bell peppers mixed fresh produce peppers & vegetables pan-african,active
+SKY-0026,Fresh Tomatoes,Fresh Produce,Peppers & Vegetables,Pan-African,weight,kg,2.49,,0.5,0.5,No,50,fresh tomatoes fresh produce peppers & vegetables pan-african,active
+SKY-0027,Onions,Fresh Produce,Peppers & Vegetables,Pan-African,weight,kg,1.29,,0.5,0.5,No,50,onions fresh produce peppers & vegetables pan-african,active
+SKY-0028,Green Chillies,Fresh Produce,Peppers & Vegetables,Pan-African,weight,kg,5.99,,0.5,0.5,No,50,green chillies fresh produce peppers & vegetables pan-african,active
+SKY-0029,Lemons,Fresh Produce,Peppers & Vegetables,Pan-African,weight,kg,2.99,,0.5,0.5,No,50,lemons fresh produce peppers & vegetables pan-african,active
+SKY-0030,Limes,Fresh Produce,Peppers & Vegetables,Pan-African,weight,kg,3.49,,0.5,0.5,No,50,limes fresh produce peppers & vegetables pan-african,active
+SKY-0031,Ripe Mango,Fresh Produce,Fresh Fruits,Pan-African,piece,each,1.49,,1,1,No,50,ripe mango fresh produce fresh fruits pan-african,active
+SKY-0032,Pineapple,Fresh Produce,Fresh Fruits,Pan-African,piece,each,2.49,,1,1,No,50,pineapple fresh produce fresh fruits pan-african,active
+SKY-0033,Pawpaw (Papaya),Fresh Produce,Fresh Fruits,Pan-African,piece,each,2.99,,1,1,No,50,pawpaw  papaya  fresh produce fresh fruits pan-african,active
+SKY-0034,Watermelon,Fresh Produce,Fresh Fruits,Pan-African,piece,each,3.99,,1,1,No,50,watermelon fresh produce fresh fruits pan-african,active
+SKY-0035,Oranges,Fresh Produce,Fresh Fruits,Pan-African,weight,kg,2.49,,0.5,0.5,No,50,oranges fresh produce fresh fruits pan-african,active
+SKY-0036,Avocado,Fresh Produce,Fresh Fruits,Pan-African,piece,each,1.29,,1,1,No,50,avocado fresh produce fresh fruits pan-african,active
+SKY-0037,Fresh Coconut,Fresh Produce,Fresh Fruits,Pan-African,piece,each,1.99,,1,1,No,50,fresh coconut fresh produce fresh fruits pan-african,active
+SKY-0038,Soursop,Fresh Produce,Fresh Fruits,Pan-African,piece,each,6.99,,1,1,No,50,soursop fresh produce fresh fruits pan-african graviola,active
+SKY-0039,African Star Apple (Agbalumo),Fresh Produce,Fresh Fruits,Nigerian,weight,kg,9.99,,0.5,0.5,No,50,african star apple  agbalumo  fresh produce fresh fruits nigerian udara cherry,active
+SKY-0040,Lemongrass,Fresh Produce,Fresh Herbs,Pan-African,piece,bunch,1.99,,1,1,No,50,lemongrass fresh produce fresh herbs pan-african,active
+SKY-0041,Fresh Thyme,Fresh Produce,Fresh Herbs,Pan-African,piece,bunch,1.49,,1,1,No,50,fresh thyme fresh produce fresh herbs pan-african,active
+SKY-0042,Fresh Mint,Fresh Produce,Fresh Herbs,Pan-African,piece,bunch,1.29,,1,1,No,50,fresh mint fresh produce fresh herbs pan-african,active
+SKY-0043,Fresh Coriander,Fresh Produce,Fresh Herbs,Pan-African,piece,bunch,1.29,,1,1,No,50,fresh coriander fresh produce fresh herbs pan-african,active
+SKY-0044,Curry Leaves,Fresh Produce,Fresh Herbs,Pan-African,piece,pack,1.99,,1,1,No,50,curry leaves fresh produce fresh herbs pan-african,active
+SKY-0045,Titus Fish (Mackerel),"Meat, Fish & Poultry",Frozen Fish,Pan-African,weight,kg,5.49,,0.5,0.5,No,50,"titus fish  mackerel  meat, fish & poultry frozen fish pan-african",active
+SKY-0046,Croaker Fish,"Meat, Fish & Poultry",Frozen Fish,Pan-African,weight,kg,6.99,,0.5,0.5,No,50,"croaker fish meat, fish & poultry frozen fish pan-african",active
+SKY-0047,Whole Tilapia,"Meat, Fish & Poultry",Frozen Fish,Pan-African,weight,kg,5.99,,0.5,0.5,No,50,"whole tilapia meat, fish & poultry frozen fish pan-african",active
+SKY-0048,Catfish (Cleaned),"Meat, Fish & Poultry",Frozen Fish,Pan-African,weight,kg,7.99,,0.5,0.5,No,50,"catfish  cleaned  meat, fish & poultry frozen fish pan-african",active
+SKY-0049,Hake Fish,"Meat, Fish & Poultry",Frozen Fish,Pan-African,weight,kg,5.49,,0.5,0.5,No,50,"hake fish meat, fish & poultry frozen fish pan-african",active
+SKY-0050,Frozen King Prawns,"Meat, Fish & Poultry",Frozen Fish,Pan-African,pack,500g pack,7.99,,1,1,No,50,"frozen king prawns meat, fish & poultry frozen fish pan-african shrimp",active
+SKY-0051,Shawa Fish (Bonga),"Meat, Fish & Poultry",Frozen Fish,Pan-African,weight,kg,8.99,,0.5,0.5,No,50,"shawa fish  bonga  meat, fish & poultry frozen fish pan-african",active
+SKY-0052,Stockfish Head (Okporoko),"Meat, Fish & Poultry",Dried & Smoked Fish,Pan-African,weight,kg,28.99,,0.5,0.5,No,50,"stockfish head  okporoko  meat, fish & poultry dried & smoked fish pan-african",active
+SKY-0053,Stockfish Pieces,"Meat, Fish & Poultry",Dried & Smoked Fish,Pan-African,weight,kg,24.99,,0.5,0.5,No,50,"stockfish pieces meat, fish & poultry dried & smoked fish pan-african",active
+SKY-0054,Smoked Catfish,"Meat, Fish & Poultry",Dried & Smoked Fish,Pan-African,weight,kg,12.99,,0.5,0.5,No,50,"smoked catfish meat, fish & poultry dried & smoked fish pan-african",active
+SKY-0055,Smoked Bonga Fish,"Meat, Fish & Poultry",Dried & Smoked Fish,Pan-African,weight,kg,9.99,,0.5,0.5,No,50,"smoked bonga fish meat, fish & poultry dried & smoked fish pan-african shawa",active
+SKY-0056,Panla (Dried Hake),"Meat, Fish & Poultry",Dried & Smoked Fish,Pan-African,weight,kg,11.99,,0.5,0.5,No,50,"panla  dried hake  meat, fish & poultry dried & smoked fish pan-african",active
+SKY-0057,Dried Herring,"Meat, Fish & Poultry",Dried & Smoked Fish,Pan-African,weight,kg,9.99,,0.5,0.5,No,50,"dried herring meat, fish & poultry dried & smoked fish pan-african",active
+SKY-0058,Ground Crayfish,"Meat, Fish & Poultry",Dried & Smoked Fish,Pan-African,variant,pack,3.99,"100g=3.99,250g=8.99,500g=15.99",1,1,No,50,"ground crayfish meat, fish & poultry dried & smoked fish pan-african",active
+SKY-0059,Whole Crayfish,"Meat, Fish & Poultry",Dried & Smoked Fish,Pan-African,variant,pack,4.99,"100g=4.99,250g=10.99,500g=19.99",1,1,No,50,"whole crayfish meat, fish & poultry dried & smoked fish pan-african",active
+SKY-0060,Dried Shrimps (Ede),"Meat, Fish & Poultry",Dried & Smoked Fish,Pan-African,pack,100g pack,3.49,,1,1,No,50,"dried shrimps  ede  meat, fish & poultry dried & smoked fish pan-african",active
+SKY-0061,Ponmo (Cow Skin),"Meat, Fish & Poultry",Dried & Smoked Fish,Pan-African,weight,kg,7.99,,0.5,0.5,No,50,"ponmo  cow skin  meat, fish & poultry dried & smoked fish pan-african kpomo",active
+SKY-0062,Smoked Turkey Wings,"Meat, Fish & Poultry",Dried & Smoked Fish,Pan-African,weight,kg,6.99,,0.5,0.5,No,50,"smoked turkey wings meat, fish & poultry dried & smoked fish pan-african",active
+SKY-0063,Goat Meat (Cut),"Meat, Fish & Poultry","Beef, Goat & Lamb",Pan-African,weight,kg,11.99,,0.5,0.5,No,50,"goat meat  cut  meat, fish & poultry beef, goat & lamb pan-african mutton",active
+SKY-0064,Goat Meat Mixed Offal,"Meat, Fish & Poultry","Beef, Goat & Lamb",Pan-African,weight,kg,8.99,,0.5,0.5,No,50,"goat meat mixed offal meat, fish & poultry beef, goat & lamb pan-african",active
+SKY-0065,Beef Shin,"Meat, Fish & Poultry","Beef, Goat & Lamb",Pan-African,weight,kg,7.99,,0.5,0.5,No,50,"beef shin meat, fish & poultry beef, goat & lamb pan-african",active
+SKY-0066,Oxtail,"Meat, Fish & Poultry","Beef, Goat & Lamb",Pan-African,weight,kg,9.99,,0.5,0.5,No,50,"oxtail meat, fish & poultry beef, goat & lamb pan-african",active
+SKY-0067,Cow Foot,"Meat, Fish & Poultry","Beef, Goat & Lamb",Pan-African,weight,kg,5.99,,0.5,0.5,No,50,"cow foot meat, fish & poultry beef, goat & lamb pan-african",active
+SKY-0068,Tripe (Shaki),"Meat, Fish & Poultry","Beef, Goat & Lamb",Pan-African,weight,kg,4.99,,0.5,0.5,No,50,"tripe  shaki  meat, fish & poultry beef, goat & lamb pan-african",active
+SKY-0069,Ox Tongue,"Meat, Fish & Poultry","Beef, Goat & Lamb",Pan-African,weight,kg,6.99,,0.5,0.5,No,50,"ox tongue meat, fish & poultry beef, goat & lamb pan-african",active
+SKY-0070,Cow Leg Pieces,"Meat, Fish & Poultry","Beef, Goat & Lamb",Pan-African,weight,kg,4.99,,0.5,0.5,No,50,"cow leg pieces meat, fish & poultry beef, goat & lamb pan-african",active
+SKY-0071,Lamb Chops,"Meat, Fish & Poultry","Beef, Goat & Lamb",Pan-African,weight,kg,12.99,,0.5,0.5,No,50,"lamb chops meat, fish & poultry beef, goat & lamb pan-african",active
+SKY-0072,Chicken Drumsticks,"Meat, Fish & Poultry",Chicken & Turkey,Pan-African,weight,kg,3.49,,0.5,0.5,No,50,"chicken drumsticks meat, fish & poultry chicken & turkey pan-african",active
+SKY-0073,Chicken Wings,"Meat, Fish & Poultry",Chicken & Turkey,Pan-African,weight,kg,4.49,,0.5,0.5,No,50,"chicken wings meat, fish & poultry chicken & turkey pan-african",active
+SKY-0074,Whole Chicken,"Meat, Fish & Poultry",Chicken & Turkey,Pan-African,piece,each,6.99,,1,1,No,50,"whole chicken meat, fish & poultry chicken & turkey pan-african",active
+SKY-0075,Hard Chicken (Old Hen),"Meat, Fish & Poultry",Chicken & Turkey,Pan-African,piece,each,9.99,,1,1,No,50,"hard chicken  old hen  meat, fish & poultry chicken & turkey pan-african",active
+SKY-0076,Turkey Wings,"Meat, Fish & Poultry",Chicken & Turkey,Pan-African,weight,kg,4.99,,0.5,0.5,No,50,"turkey wings meat, fish & poultry chicken & turkey pan-african",active
+SKY-0077,Turkey Necks,"Meat, Fish & Poultry",Chicken & Turkey,Pan-African,weight,kg,3.99,,0.5,0.5,No,50,"turkey necks meat, fish & poultry chicken & turkey pan-african",active
+SKY-0078,Chicken Gizzards,"Meat, Fish & Poultry",Chicken & Turkey,Pan-African,weight,kg,4.49,,0.5,0.5,No,50,"chicken gizzards meat, fish & poultry chicken & turkey pan-african",active
+SKY-0079,Giant African Snails,"Meat, Fish & Poultry",Snails & Specialty,Pan-African,pack,pack,12.99,,1,1,No,50,"giant african snails meat, fish & poultry snails & specialty pan-african igbin",active
+SKY-0080,Frozen Goat Head,"Meat, Fish & Poultry",Snails & Specialty,Pan-African,piece,each,9.99,,1,1,No,50,"frozen goat head meat, fish & poultry snails & specialty pan-african",active
+SKY-0081,Suya Beef Strips,"Meat, Fish & Poultry",Snails & Specialty,Pan-African,pack,500g pack,8.99,,1,1,No,50,"suya beef strips meat, fish & poultry snails & specialty pan-african",active
+SKY-0082,Long Grain Parboiled Rice,"Rice, Grains & Flours",Rice,Pan-African,variant,bag,9.99,"2kg=5.99,5kg=9.99,10kg=18.99,20kg=34.99",1,1,No,50,"long grain parboiled rice rice, grains & flours rice pan-african jollof",active
+SKY-0083,Ofada Rice,"Rice, Grains & Flours",Rice,Pan-African,variant,bag,6.99,"1kg=3.99,2kg=6.99,5kg=15.99",1,1,No,50,"ofada rice rice, grains & flours rice pan-african ofada local",active
+SKY-0084,Basmati Rice,"Rice, Grains & Flours",Rice,Pan-African,variant,bag,6.49,"2kg=6.49,5kg=13.99",1,1,No,50,"basmati rice rice, grains & flours rice pan-african",active
+SKY-0085,Brown Rice,"Rice, Grains & Flours",Rice,Pan-African,variant,bag,4.99,"1kg=2.99,2kg=4.99",1,1,No,50,"brown rice rice, grains & flours rice pan-african",active
+SKY-0086,Jollof Rice Mix,"Rice, Grains & Flours",Rice,Pan-African,pack,pack,2.49,,1,1,No,50,"jollof rice mix rice, grains & flours rice pan-african",active
+SKY-0087,White Garri (Ijebu),"Rice, Grains & Flours",Garri & Tapioca,Pan-African,variant,bag,3.99,"1kg=3.99,2kg=6.99,5kg=14.99",1,1,No,50,"white garri  ijebu  rice, grains & flours garri & tapioca pan-african gari eba",active
+SKY-0088,Yellow Garri,"Rice, Grains & Flours",Garri & Tapioca,Pan-African,variant,bag,4.49,"1kg=4.49,2kg=7.99,5kg=16.99",1,1,No,50,"yellow garri rice, grains & flours garri & tapioca pan-african gari eba",active
+SKY-0089,Tapioca Pearls,"Rice, Grains & Flours",Garri & Tapioca,Pan-African,pack,500g pack,2.49,,1,1,No,50,"tapioca pearls rice, grains & flours garri & tapioca pan-african sago",active
+SKY-0090,Cassava Flakes (Lafun),"Rice, Grains & Flours",Garri & Tapioca,Pan-African,pack,1kg pack,4.99,,1,1,No,50,"cassava flakes  lafun  rice, grains & flours garri & tapioca pan-african",active
+SKY-0091,Poundo Yam Flour,"Rice, Grains & Flours",Swallow Flours,Pan-African,variant,bag,5.99,"900g=3.99,1.8kg=5.99,4.5kg=12.99",1,1,No,50,"poundo yam flour rice, grains & flours swallow flours pan-african pounded yam iyan",active
+SKY-0092,Amala Flour (Yam),"Rice, Grains & Flours",Swallow Flours,Pan-African,variant,bag,4.99,"900g=3.49,1.8kg=4.99",1,1,No,50,"amala flour  yam  rice, grains & flours swallow flours pan-african elubo isu",active
+SKY-0093,Plantain Flour (Elubo Ogede),"Rice, Grains & Flours",Swallow Flours,Pan-African,pack,1kg pack,4.99,,1,1,No,50,"plantain flour  elubo ogede  rice, grains & flours swallow flours pan-african",active
+SKY-0094,Cassava Fufu Flour,"Rice, Grains & Flours",Swallow Flours,Pan-African,pack,1kg pack,3.99,,1,1,No,50,"cassava fufu flour rice, grains & flours swallow flours pan-african",active
+SKY-0095,Semovita,"Rice, Grains & Flours",Swallow Flours,Pan-African,variant,bag,4.99,"1kg=2.99,2kg=4.99",1,1,No,50,"semovita rice, grains & flours swallow flours pan-african semolina",active
+SKY-0096,Wheat Meal (Pounded Meal),"Rice, Grains & Flours",Swallow Flours,Pan-African,pack,1kg pack,3.49,,1,1,No,50,"wheat meal  pounded meal  rice, grains & flours swallow flours pan-african",active
+SKY-0097,Maize Meal (Ugali/Posho),"Rice, Grains & Flours",Swallow Flours,East African,variant,bag,3.99,"2kg=3.99,5kg=8.99",1,1,No,50,"maize meal  ugali/posho  rice, grains & flours swallow flours east african unga mealie pap",active
+SKY-0098,Fufu Powder (Ghana),"Rice, Grains & Flours",Swallow Flours,Ghanaian,pack,680g pack,3.99,,1,1,No,50,"fufu powder  ghana  rice, grains & flours swallow flours ghanaian banku",active
+SKY-0099,Honey Beans (Oloyin),"Rice, Grains & Flours",Beans & Pulses,Pan-African,variant,bag,3.99,"1kg=3.99,2kg=7.49,5kg=16.99",1,1,No,50,"honey beans  oloyin  rice, grains & flours beans & pulses pan-african",active
+SKY-0100,Brown Beans,"Rice, Grains & Flours",Beans & Pulses,Pan-African,variant,bag,3.49,"1kg=3.49,2kg=6.49",1,1,No,50,"brown beans rice, grains & flours beans & pulses pan-african",active
+SKY-0101,Black-Eyed Peas,"Rice, Grains & Flours",Beans & Pulses,Pan-African,variant,bag,2.99,"500g=2.99,1kg=4.99",1,1,No,50,"black-eyed peas rice, grains & flours beans & pulses pan-african",active
+SKY-0102,White Beans,"Rice, Grains & Flours",Beans & Pulses,Pan-African,pack,1kg pack,3.49,,1,1,No,50,"white beans rice, grains & flours beans & pulses pan-african",active
+SKY-0103,Pigeon Peas,"Rice, Grains & Flours",Beans & Pulses,Pan-African,pack,500g pack,2.99,,1,1,No,50,"pigeon peas rice, grains & flours beans & pulses pan-african",active
+SKY-0104,Red Lentils,"Rice, Grains & Flours",Beans & Pulses,Pan-African,pack,500g pack,2.29,,1,1,No,50,"red lentils rice, grains & flours beans & pulses pan-african",active
+SKY-0105,Bambara Nuts,"Rice, Grains & Flours",Beans & Pulses,Pan-African,pack,500g pack,4.99,,1,1,No,50,"bambara nuts rice, grains & flours beans & pulses pan-african",active
+SKY-0106,Golden Morn Cereal,"Rice, Grains & Flours",Cereals & Pap,Pan-African,pack,900g pack,6.99,,1,1,No,50,"golden morn cereal rice, grains & flours cereals & pap pan-african nestle",active
+SKY-0107,Ogi (Pap) Powder,"Rice, Grains & Flours",Cereals & Pap,Pan-African,pack,500g pack,3.49,,1,1,No,50,"ogi  pap  powder rice, grains & flours cereals & pap pan-african akamu koko",active
+SKY-0108,Custard Powder,"Rice, Grains & Flours",Cereals & Pap,Pan-African,pack,350g pack,2.49,,1,1,No,50,"custard powder rice, grains & flours cereals & pap pan-african",active
+SKY-0109,Oats,"Rice, Grains & Flours",Cereals & Pap,Pan-African,pack,1kg pack,2.49,,1,1,No,50,"oats rice, grains & flours cereals & pap pan-african",active
+SKY-0110,Cornflakes,"Rice, Grains & Flours",Cereals & Pap,Pan-African,pack,500g pack,2.99,,1,1,No,50,"cornflakes rice, grains & flours cereals & pap pan-african",active
+SKY-0111,Maggi Star Seasoning Cubes,Spices & Soup Ingredients,Seasoning Cubes & Mixes,Pan-African,variant,pack,1.99,"Pack of 50=1.99,Pack of 100=3.49,Tub of 200=6.49",1,1,No,50,maggi star seasoning cubes spices & soup ingredients seasoning cubes & mixes pan-african stock cubes,active
+SKY-0112,Knorr Chicken Cubes,Spices & Soup Ingredients,Seasoning Cubes & Mixes,Pan-African,pack,pack of 24,1.99,,1,1,No,50,knorr chicken cubes spices & soup ingredients seasoning cubes & mixes pan-african,active
+SKY-0113,Maggi Crayfish Cubes,Spices & Soup Ingredients,Seasoning Cubes & Mixes,Pan-African,pack,pack of 24,2.49,,1,1,No,50,maggi crayfish cubes spices & soup ingredients seasoning cubes & mixes pan-african,active
+SKY-0114,Royco Mchuzi Mix,Spices & Soup Ingredients,Seasoning Cubes & Mixes,East African,pack,200g pack,2.99,,1,1,No,50,royco mchuzi mix spices & soup ingredients seasoning cubes & mixes east african,active
+SKY-0115,Suya Spice (Yaji),Spices & Soup Ingredients,Seasoning Cubes & Mixes,Pan-African,pack,100g pack,2.99,,1,1,No,50,suya spice  yaji  spices & soup ingredients seasoning cubes & mixes pan-african,active
+SKY-0116,Jollof Seasoning,Spices & Soup Ingredients,Seasoning Cubes & Mixes,Pan-African,pack,100g pack,2.49,,1,1,No,50,jollof seasoning spices & soup ingredients seasoning cubes & mixes pan-african,active
+SKY-0117,All-Purpose Seasoning,Spices & Soup Ingredients,Seasoning Cubes & Mixes,Pan-African,pack,100g pack,2.49,,1,1,No,50,all-purpose seasoning spices & soup ingredients seasoning cubes & mixes pan-african,active
+SKY-0118,Curry Powder,Spices & Soup Ingredients,Seasoning Cubes & Mixes,Pan-African,pack,100g pack,1.99,,1,1,No,50,curry powder spices & soup ingredients seasoning cubes & mixes pan-african,active
+SKY-0119,Dried Thyme,Spices & Soup Ingredients,Seasoning Cubes & Mixes,Pan-African,pack,50g pack,1.49,,1,1,No,50,dried thyme spices & soup ingredients seasoning cubes & mixes pan-african,active
+SKY-0120,Bay Leaves,Spices & Soup Ingredients,Seasoning Cubes & Mixes,Pan-African,pack,25g pack,1.49,,1,1,No,50,bay leaves spices & soup ingredients seasoning cubes & mixes pan-african,active
+SKY-0121,Ground Cayenne Pepper,Spices & Soup Ingredients,Ground & Whole Spices,Pan-African,variant,pack,2.49,"100g=2.49,250g=4.99",1,1,No,50,ground cayenne pepper spices & soup ingredients ground & whole spices pan-african,active
+SKY-0122,Dry Pepper Flakes,Spices & Soup Ingredients,Ground & Whole Spices,Pan-African,pack,100g pack,2.99,,1,1,No,50,dry pepper flakes spices & soup ingredients ground & whole spices pan-african,active
+SKY-0123,Ground Ginger,Spices & Soup Ingredients,Ground & Whole Spices,Pan-African,pack,100g pack,2.49,,1,1,No,50,ground ginger spices & soup ingredients ground & whole spices pan-african,active
+SKY-0124,Ground Garlic,Spices & Soup Ingredients,Ground & Whole Spices,Pan-African,pack,100g pack,2.49,,1,1,No,50,ground garlic spices & soup ingredients ground & whole spices pan-african,active
+SKY-0125,Nutmeg (Ehuru),Spices & Soup Ingredients,Ground & Whole Spices,Pan-African,pack,50g pack,2.99,,1,1,No,50,nutmeg  ehuru  spices & soup ingredients ground & whole spices pan-african,active
+SKY-0126,Calabash Nutmeg,Spices & Soup Ingredients,Ground & Whole Spices,Pan-African,pack,50g pack,3.49,,1,1,No,50,calabash nutmeg spices & soup ingredients ground & whole spices pan-african,active
+SKY-0127,Alligator Pepper,Spices & Soup Ingredients,Ground & Whole Spices,Pan-African,pack,50g pack,3.49,,1,1,No,50,alligator pepper spices & soup ingredients ground & whole spices pan-african atare,active
+SKY-0128,Grains of Selim (Uda),Spices & Soup Ingredients,Ground & Whole Spices,Pan-African,pack,50g pack,3.99,,1,1,No,50,grains of selim  uda  spices & soup ingredients ground & whole spices pan-african,active
+SKY-0129,Uziza Seeds,Spices & Soup Ingredients,Ground & Whole Spices,Pan-African,pack,50g pack,3.49,,1,1,No,50,uziza seeds spices & soup ingredients ground & whole spices pan-african,active
+SKY-0130,Prekese (Tetrapleura),Spices & Soup Ingredients,Ground & Whole Spices,Pan-African,pack,50g pack,3.99,,1,1,No,50,prekese  tetrapleura  spices & soup ingredients ground & whole spices pan-african,active
+SKY-0131,Whole Cloves,Spices & Soup Ingredients,Ground & Whole Spices,Pan-African,pack,50g pack,2.49,,1,1,No,50,whole cloves spices & soup ingredients ground & whole spices pan-african,active
+SKY-0132,Cinnamon Sticks,Spices & Soup Ingredients,Ground & Whole Spices,Pan-African,pack,50g pack,2.49,,1,1,No,50,cinnamon sticks spices & soup ingredients ground & whole spices pan-african,active
+SKY-0133,Whole Black Pepper,Spices & Soup Ingredients,Ground & Whole Spices,Pan-African,pack,100g pack,2.99,,1,1,No,50,whole black pepper spices & soup ingredients ground & whole spices pan-african,active
+SKY-0134,Berbere Spice,Spices & Soup Ingredients,Ground & Whole Spices,East African,pack,100g pack,3.99,,1,1,No,50,berbere spice spices & soup ingredients ground & whole spices east african ethiopian,active
+SKY-0135,Egusi (Ground Melon Seeds),Spices & Soup Ingredients,Soup Ingredients,Pan-African,variant,pack,4.49,"250g=4.49,500g=7.99,1kg=14.99",1,1,No,50,egusi  ground melon seeds  spices & soup ingredients soup ingredients pan-african,active
+SKY-0136,Egusi (Whole),Spices & Soup Ingredients,Soup Ingredients,Pan-African,pack,500g pack,5.99,,1,1,No,50,egusi  whole  spices & soup ingredients soup ingredients pan-african,active
+SKY-0137,Ogbono (Ground),Spices & Soup Ingredients,Soup Ingredients,Pan-African,variant,pack,5.99,"250g=5.99,500g=10.99",1,1,No,50,ogbono  ground  spices & soup ingredients soup ingredients pan-african draw soup,active
+SKY-0138,Ofor,Spices & Soup Ingredients,Soup Ingredients,Pan-African,pack,100g pack,2.99,,1,1,No,50,ofor spices & soup ingredients soup ingredients pan-african,active
+SKY-0139,Iru (Locust Beans),Spices & Soup Ingredients,Soup Ingredients,Pan-African,pack,pack,2.49,,1,1,No,50,iru  locust beans  spices & soup ingredients soup ingredients pan-african dawadawa ogiri,active
+SKY-0140,Ogiri,Spices & Soup Ingredients,Soup Ingredients,Pan-African,pack,pack,2.49,,1,1,No,50,ogiri spices & soup ingredients soup ingredients pan-african,active
+SKY-0141,Banga Spice Mix,Spices & Soup Ingredients,Soup Ingredients,Pan-African,pack,pack,3.49,,1,1,No,50,banga spice mix spices & soup ingredients soup ingredients pan-african palm nut soup,active
+SKY-0142,Dried Bitter Leaf,Spices & Soup Ingredients,Soup Ingredients,Pan-African,pack,100g pack,3.49,,1,1,No,50,dried bitter leaf spices & soup ingredients soup ingredients pan-african,active
+SKY-0143,Dried Ugu Leaves,Spices & Soup Ingredients,Soup Ingredients,Pan-African,pack,100g pack,3.49,,1,1,No,50,dried ugu leaves spices & soup ingredients soup ingredients pan-african,active
+SKY-0144,Dried Okra,Spices & Soup Ingredients,Soup Ingredients,Pan-African,pack,100g pack,2.99,,1,1,No,50,dried okra spices & soup ingredients soup ingredients pan-african,active
+SKY-0145,Achi Thickener,Spices & Soup Ingredients,Soup Ingredients,Pan-African,pack,100g pack,3.99,,1,1,No,50,achi thickener spices & soup ingredients soup ingredients pan-african,active
+SKY-0146,Ugba (Oil Bean Seed),Spices & Soup Ingredients,Soup Ingredients,Pan-African,pack,pack,4.99,,1,1,No,50,ugba  oil bean seed  spices & soup ingredients soup ingredients pan-african,active
+SKY-0147,Pumpkin Seeds,Spices & Soup Ingredients,Soup Ingredients,Pan-African,pack,250g pack,3.99,,1,1,No,50,pumpkin seeds spices & soup ingredients soup ingredients pan-african,active
+SKY-0148,Bitter Kola,Spices & Soup Ingredients,Soup Ingredients,Pan-African,pack,100g pack,3.49,,1,1,No,50,bitter kola spices & soup ingredients soup ingredients pan-african,active
+SKY-0149,Red Palm Oil,"Oils, Sauces & Condiments",Palm & Cooking Oils,Pan-African,variant,bottle,4.99,"500ml=4.99,1L=8.49,5L=34.99",1,1,No,50,"red palm oil oils, sauces & condiments palm & cooking oils pan-african zomi",active
+SKY-0150,Vegetable Oil,"Oils, Sauces & Condiments",Palm & Cooking Oils,Pan-African,variant,bottle,3.99,"1L=3.49,3L=8.99,5L=13.99",1,1,No,50,"vegetable oil oils, sauces & condiments palm & cooking oils pan-african",active
+SKY-0151,Groundnut Oil,"Oils, Sauces & Condiments",Palm & Cooking Oils,Pan-African,variant,bottle,5.99,"500ml=3.99,1L=5.99",1,1,No,50,"groundnut oil oils, sauces & condiments palm & cooking oils pan-african",active
+SKY-0152,Coconut Oil (Cooking),"Oils, Sauces & Condiments",Palm & Cooking Oils,Pan-African,variant,jar,5.49,"500ml=5.49,1L=9.49",1,1,No,50,"coconut oil  cooking  oils, sauces & condiments palm & cooking oils pan-african",active
+SKY-0153,Sunflower Oil,"Oils, Sauces & Condiments",Palm & Cooking Oils,Pan-African,variant,bottle,3.49,"1L=3.49,5L=13.49",1,1,No,50,"sunflower oil oils, sauces & condiments palm & cooking oils pan-african",active
+SKY-0154,Tomato Paste (Gino),"Oils, Sauces & Condiments",Sauces & Pastes,Pan-African,variant,tin,0.69,"70g=0.69,210g=1.49,400g=2.49",1,1,No,50,"tomato paste  gino  oils, sauces & condiments sauces & pastes pan-african",active
+SKY-0155,Shito (Black Pepper Sauce),"Oils, Sauces & Condiments",Sauces & Pastes,Ghanaian,pack,jar,4.49,,1,1,No,50,"shito  black pepper sauce  oils, sauces & condiments sauces & pastes ghanaian ghana",active
+SKY-0156,Hot Pepper Sauce,"Oils, Sauces & Condiments",Sauces & Pastes,Pan-African,pack,bottle,2.99,,1,1,No,50,"hot pepper sauce oils, sauces & condiments sauces & pastes pan-african",active
+SKY-0157,Peri-Peri Sauce,"Oils, Sauces & Condiments",Sauces & Pastes,South African,pack,bottle,3.49,,1,1,No,50,"peri-peri sauce oils, sauces & condiments sauces & pastes south african nandos",active
+SKY-0158,Mayonnaise,"Oils, Sauces & Condiments",Sauces & Pastes,Pan-African,pack,jar,2.99,,1,1,No,50,"mayonnaise oils, sauces & condiments sauces & pastes pan-african",active
+SKY-0159,Salad Cream,"Oils, Sauces & Condiments",Sauces & Pastes,Pan-African,pack,bottle,2.49,,1,1,No,50,"salad cream oils, sauces & condiments sauces & pastes pan-african",active
+SKY-0160,Peanut Butter,"Oils, Sauces & Condiments",Sauces & Pastes,Pan-African,pack,jar,3.49,,1,1,No,50,"peanut butter oils, sauces & condiments sauces & pastes pan-african",active
+SKY-0161,Honey,"Oils, Sauces & Condiments",Sauces & Pastes,Pan-African,pack,jar,4.99,,1,1,No,50,"honey oils, sauces & condiments sauces & pastes pan-african",active
+SKY-0162,White Vinegar,"Oils, Sauces & Condiments",Sauces & Pastes,Pan-African,pack,bottle,1.49,,1,1,No,50,"white vinegar oils, sauces & condiments sauces & pastes pan-african",active
+SKY-0163,Mrs Ball's Chutney,"Oils, Sauces & Condiments",Sauces & Pastes,South African,pack,jar,3.99,,1,1,No,50,"mrs ball's chutney oils, sauces & condiments sauces & pastes south african atchar",active
+SKY-0164,Tinned Sardines,"Oils, Sauces & Condiments",Canned & Tinned Foods,Pan-African,pack,tin,1.49,,1,1,No,50,"tinned sardines oils, sauces & condiments canned & tinned foods pan-african",active
+SKY-0165,Corned Beef,"Oils, Sauces & Condiments",Canned & Tinned Foods,Pan-African,pack,tin,3.49,,1,1,No,50,"corned beef oils, sauces & condiments canned & tinned foods pan-african",active
+SKY-0166,Tinned Mackerel,"Oils, Sauces & Condiments",Canned & Tinned Foods,Pan-African,pack,tin,1.99,,1,1,No,50,"tinned mackerel oils, sauces & condiments canned & tinned foods pan-african",active
+SKY-0167,Baked Beans,"Oils, Sauces & Condiments",Canned & Tinned Foods,Pan-African,pack,tin,0.99,,1,1,No,50,"baked beans oils, sauces & condiments canned & tinned foods pan-african",active
+SKY-0168,Chopped Tomatoes,"Oils, Sauces & Condiments",Canned & Tinned Foods,Pan-African,pack,tin,0.89,,1,1,No,50,"chopped tomatoes oils, sauces & condiments canned & tinned foods pan-african",active
+SKY-0169,Coconut Milk,"Oils, Sauces & Condiments",Canned & Tinned Foods,Pan-African,pack,tin,1.79,,1,1,No,50,"coconut milk oils, sauces & condiments canned & tinned foods pan-african",active
+SKY-0170,Evaporated Milk,"Oils, Sauces & Condiments",Canned & Tinned Foods,Pan-African,pack,tin,1.29,,1,1,No,50,"evaporated milk oils, sauces & condiments canned & tinned foods pan-african peak carnation",active
+SKY-0171,Sweetened Condensed Milk,"Oils, Sauces & Condiments",Canned & Tinned Foods,Pan-African,pack,tin,1.99,,1,1,No,50,"sweetened condensed milk oils, sauces & condiments canned & tinned foods pan-african",active
+SKY-0172,Palm Nut Cream,"Oils, Sauces & Condiments",Canned & Tinned Foods,Pan-African,pack,tin,2.99,,1,1,No,50,"palm nut cream oils, sauces & condiments canned & tinned foods pan-african banga",active
+SKY-0173,Chickpeas,"Oils, Sauces & Condiments",Canned & Tinned Foods,Pan-African,pack,tin,0.89,,1,1,No,50,"chickpeas oils, sauces & condiments canned & tinned foods pan-african",active
+SKY-0174,Sweetcorn,"Oils, Sauces & Condiments",Canned & Tinned Foods,Pan-African,pack,tin,0.99,,1,1,No,50,"sweetcorn oils, sauces & condiments canned & tinned foods pan-african",active
+SKY-0175,Ackee in Brine,"Oils, Sauces & Condiments",Canned & Tinned Foods,Caribbean,pack,tin,3.99,,1,1,No,50,"ackee in brine oils, sauces & condiments canned & tinned foods caribbean jamaican",active
+SKY-0176,Indomie Instant Noodles,"Oils, Sauces & Condiments","Noodles, Pasta & Packaged",Pan-African,variant,pack,0.45,"Single=0.45,Pack of 5=2.09,Carton of 40=15.99",1,1,No,50,"indomie instant noodles oils, sauces & condiments noodles, pasta & packaged pan-african",active
+SKY-0177,Spaghetti,"Oils, Sauces & Condiments","Noodles, Pasta & Packaged",Pan-African,pack,500g pack,1.29,,1,1,No,50,"spaghetti oils, sauces & condiments noodles, pasta & packaged pan-african",active
+SKY-0178,Macaroni,"Oils, Sauces & Condiments","Noodles, Pasta & Packaged",Pan-African,pack,500g pack,1.29,,1,1,No,50,"macaroni oils, sauces & condiments noodles, pasta & packaged pan-african",active
+SKY-0179,Couscous,"Oils, Sauces & Condiments","Noodles, Pasta & Packaged",Pan-African,pack,500g pack,1.99,,1,1,No,50,"couscous oils, sauces & condiments noodles, pasta & packaged pan-african",active
+SKY-0180,Semolina Fine,"Oils, Sauces & Condiments","Noodles, Pasta & Packaged",Pan-African,pack,1kg pack,2.49,,1,1,No,50,"semolina fine oils, sauces & condiments noodles, pasta & packaged pan-african",active
+SKY-0181,Pasta Twists,"Oils, Sauces & Condiments","Noodles, Pasta & Packaged",Pan-African,pack,500g pack,1.29,,1,1,No,50,"pasta twists oils, sauces & condiments noodles, pasta & packaged pan-african",active
+SKY-0182,Chin Chin,Snacks & Sweets,African Snacks,Pan-African,variant,pack,2.99,"Small=2.99,Large=5.99",1,1,No,50,chin chin snacks & sweets african snacks pan-african,active
+SKY-0183,Plantain Chips,Snacks & Sweets,African Snacks,Pan-African,pack,pack,1.99,,1,1,No,50,plantain chips snacks & sweets african snacks pan-african,active
+SKY-0184,Kuli Kuli,Snacks & Sweets,African Snacks,Pan-African,pack,pack,2.49,,1,1,No,50,kuli kuli snacks & sweets african snacks pan-african groundnut,active
+SKY-0185,Roasted Groundnuts,Snacks & Sweets,African Snacks,Pan-African,pack,pack,1.99,,1,1,No,50,roasted groundnuts snacks & sweets african snacks pan-african peanuts,active
+SKY-0186,Cashew Nuts,Snacks & Sweets,African Snacks,Pan-African,pack,200g pack,4.99,,1,1,No,50,cashew nuts snacks & sweets african snacks pan-african,active
+SKY-0187,Coconut Chips,Snacks & Sweets,African Snacks,Pan-African,pack,pack,2.49,,1,1,No,50,coconut chips snacks & sweets african snacks pan-african,active
+SKY-0188,Puff Puff Mix,Snacks & Sweets,African Snacks,Pan-African,pack,pack,2.99,,1,1,No,50,puff puff mix snacks & sweets african snacks pan-african,active
+SKY-0189,Cabin Biscuits,Snacks & Sweets,African Snacks,Pan-African,pack,pack,1.99,,1,1,No,50,cabin biscuits snacks & sweets african snacks pan-african,active
+SKY-0190,Gold Cup Biscuits,Snacks & Sweets,African Snacks,Pan-African,pack,pack,1.49,,1,1,No,50,gold cup biscuits snacks & sweets african snacks pan-african,active
+SKY-0191,Tigernut (Ofio),Snacks & Sweets,African Snacks,Pan-African,pack,pack,3.99,,1,1,No,50,tigernut  ofio  snacks & sweets african snacks pan-african,active
+SKY-0192,Dodo Ikire,Snacks & Sweets,African Snacks,Pan-African,pack,pack,3.49,,1,1,No,50,dodo ikire snacks & sweets african snacks pan-african,active
+SKY-0193,Biltong,Snacks & Sweets,African Snacks,South African,pack,100g pack,5.99,,1,1,No,50,biltong snacks & sweets african snacks south african dried meat,active
+SKY-0194,Droewors,Snacks & Sweets,African Snacks,South African,pack,100g pack,5.99,,1,1,No,50,droewors snacks & sweets african snacks south african sausage,active
+SKY-0195,Moin Moin Mix,Snacks & Sweets,African Snacks,Pan-African,pack,pack,2.49,,1,1,No,50,moin moin mix snacks & sweets african snacks pan-african,active
+SKY-0196,Tom Tom Candy,Snacks & Sweets,Sweets & Biscuits,Pan-African,pack,pack,1.49,,1,1,No,50,tom tom candy snacks & sweets sweets & biscuits pan-african,active
+SKY-0197,Digestive Biscuits,Snacks & Sweets,Sweets & Biscuits,Pan-African,pack,pack,1.29,,1,1,No,50,digestive biscuits snacks & sweets sweets & biscuits pan-african,active
+SKY-0198,Shortbread,Snacks & Sweets,Sweets & Biscuits,Pan-African,pack,pack,1.99,,1,1,No,50,shortbread snacks & sweets sweets & biscuits pan-african,active
+SKY-0199,Ouma Rusks,Snacks & Sweets,Sweets & Biscuits,Pan-African,pack,pack,3.99,,1,1,No,50,ouma rusks snacks & sweets sweets & biscuits pan-african south african,active
+SKY-0200,Chocolate Bar Assorted,Snacks & Sweets,Sweets & Biscuits,Pan-African,pack,each,1.29,,1,1,No,50,chocolate bar assorted snacks & sweets sweets & biscuits pan-african,active
+SKY-0201,Malta Guinness,Drinks,Malt & Soft Drinks,Pan-African,variant,bottle,1.29,"Single 330ml=1.29,Pack of 6=6.99,Case of 24=24.99",1,1,No,50,malta guinness drinks malt & soft drinks pan-african,active
+SKY-0202,Maltina,Drinks,Malt & Soft Drinks,Pan-African,variant,bottle,1.29,"Single 330ml=1.29,Pack of 6=6.99",1,1,No,50,maltina drinks malt & soft drinks pan-african,active
+SKY-0203,Supermalt,Drinks,Malt & Soft Drinks,Pan-African,variant,bottle,1.49,"Single=1.49,Pack of 6=7.99",1,1,No,50,supermalt drinks malt & soft drinks pan-african,active
+SKY-0204,Vimto Cordial,Drinks,Malt & Soft Drinks,Pan-African,pack,bottle,3.49,,1,1,No,50,vimto cordial drinks malt & soft drinks pan-african,active
+SKY-0205,Ribena,Drinks,Malt & Soft Drinks,Pan-African,pack,bottle,3.99,,1,1,No,50,ribena drinks malt & soft drinks pan-african,active
+SKY-0206,Ginger Beer,Drinks,Malt & Soft Drinks,Pan-African,pack,can,0.99,,1,1,No,50,ginger beer drinks malt & soft drinks pan-african,active
+SKY-0207,Coconut Water,Drinks,Malt & Soft Drinks,Pan-African,variant,carton,1.99,"330ml=1.99,1L=3.49",1,1,No,50,coconut water drinks malt & soft drinks pan-african,active
+SKY-0208,Lucozade Energy,Drinks,Malt & Soft Drinks,Pan-African,pack,bottle,1.49,,1,1,No,50,lucozade energy drinks malt & soft drinks pan-african,active
+SKY-0209,Bottled Water,Drinks,Malt & Soft Drinks,Pan-African,variant,bottle,0.79,"500ml=0.79,1.5L=1.09,Case of 12=7.99",1,1,No,50,bottled water drinks malt & soft drinks pan-african,active
+SKY-0210,Chivita Orange Juice,Drinks,Juices & Traditional Drinks,Pan-African,pack,carton,3.49,,1,1,No,50,chivita orange juice drinks juices & traditional drinks pan-african,active
+SKY-0211,Five Alive,Drinks,Juices & Traditional Drinks,Pan-African,pack,carton,2.49,,1,1,No,50,five alive drinks juices & traditional drinks pan-african,active
+SKY-0212,Rubicon Mango,Drinks,Juices & Traditional Drinks,Pan-African,pack,can,1.29,,1,1,No,50,rubicon mango drinks juices & traditional drinks pan-african,active
+SKY-0213,Ceres Juice,Drinks,Juices & Traditional Drinks,Pan-African,pack,carton,2.99,,1,1,No,50,ceres juice drinks juices & traditional drinks pan-african,active
+SKY-0214,Zobo (Hibiscus) Drink,Drinks,Juices & Traditional Drinks,Pan-African,variant,bottle,2.99,"500ml=2.99,1L=4.99",1,1,No,50,zobo  hibiscus  drink drinks juices & traditional drinks pan-african,active
+SKY-0215,Kunu,Drinks,Juices & Traditional Drinks,Pan-African,pack,bottle,2.99,,1,1,No,50,kunu drinks juices & traditional drinks pan-african,active
+SKY-0216,Chapman Mix,Drinks,Juices & Traditional Drinks,Pan-African,pack,bottle,3.99,,1,1,No,50,chapman mix drinks juices & traditional drinks pan-african,active
+SKY-0217,Tigernut Drink (Horchata),Drinks,Juices & Traditional Drinks,Pan-African,pack,bottle,2.99,,1,1,No,50,tigernut drink  horchata  drinks juices & traditional drinks pan-african,active
+SKY-0218,Peak Milk Powder,Drinks,"Tea, Coffee & Milk",Pan-African,variant,tin,5.99,"400g=5.99,900g=11.99",1,1,No,50,"peak milk powder drinks tea, coffee & milk pan-african",active
+SKY-0219,Milo,Drinks,"Tea, Coffee & Milk",Pan-African,variant,tin,4.99,"400g=4.99,1kg=9.99",1,1,No,50,"milo drinks tea, coffee & milk pan-african",active
+SKY-0220,Bournvita,Drinks,"Tea, Coffee & Milk",Pan-African,variant,tin,4.99,"400g=4.99,900g=9.49",1,1,No,50,"bournvita drinks tea, coffee & milk pan-african",active
+SKY-0221,Ovaltine,Drinks,"Tea, Coffee & Milk",Pan-African,pack,tin,4.99,,1,1,No,50,"ovaltine drinks tea, coffee & milk pan-african",active
+SKY-0222,Nescafe Classic,Drinks,"Tea, Coffee & Milk",Pan-African,pack,jar,5.99,,1,1,No,50,"nescafe classic drinks tea, coffee & milk pan-african",active
+SKY-0223,Lipton Tea,Drinks,"Tea, Coffee & Milk",Pan-African,pack,box of 100,3.99,,1,1,No,50,"lipton tea drinks tea, coffee & milk pan-african",active
+SKY-0224,Kericho Gold Tea,Drinks,"Tea, Coffee & Milk",East African,pack,box,3.49,,1,1,No,50,"kericho gold tea drinks tea, coffee & milk east african kenyan tea",active
+SKY-0225,Rooibos Tea,Drinks,"Tea, Coffee & Milk",South African,pack,box,3.49,,1,1,No,50,"rooibos tea drinks tea, coffee & milk south african redbush",active
+SKY-0226,Dried Hibiscus (Zobo Leaves),Drinks,"Tea, Coffee & Milk",Pan-African,pack,250g pack,4.99,,1,1,No,50,"dried hibiscus  zobo leaves  drinks tea, coffee & milk pan-african sorrel",active
+SKY-0227,Moringa Tea,Drinks,"Tea, Coffee & Milk",Pan-African,pack,box,4.99,,1,1,No,50,"moringa tea drinks tea, coffee & milk pan-african",active
+SKY-0228,Guinness Foreign Extra,Drinks,Beer & Spirits (18+),Nigerian,variant,bottle,2.99,"Single=2.99,Pack of 6=15.99",1,1,Yes,50,guinness foreign extra drinks beer & spirits  18+  nigerian stout,active
+SKY-0229,Star Lager,Drinks,Beer & Spirits (18+),Nigerian,pack,bottle,2.49,,1,1,Yes,50,star lager drinks beer & spirits  18+  nigerian beer,active
+SKY-0230,Gulder Lager,Drinks,Beer & Spirits (18+),Nigerian,pack,bottle,2.49,,1,1,Yes,50,gulder lager drinks beer & spirits  18+  nigerian beer,active
+SKY-0231,Castle Lager,Drinks,Beer & Spirits (18+),South African,pack,bottle,2.49,,1,1,Yes,50,castle lager drinks beer & spirits  18+  south african beer,active
+SKY-0232,Tusker Lager,Drinks,Beer & Spirits (18+),East African,pack,bottle,2.49,,1,1,Yes,50,tusker lager drinks beer & spirits  18+  east african beer,active
+SKY-0233,Agege Bread,Bakery & Dairy,Bakery,Pan-African,pack,loaf,2.99,,1,1,No,50,agege bread bakery & dairy bakery pan-african tin bread,active
+SKY-0234,Sliced White Bread,Bakery & Dairy,Bakery,Pan-African,pack,loaf,1.49,,1,1,No,50,sliced white bread bakery & dairy bakery pan-african,active
+SKY-0235,Butter Bread,Bakery & Dairy,Bakery,Pan-African,pack,loaf,2.99,,1,1,No,50,butter bread bakery & dairy bakery pan-african,active
+SKY-0236,Sweet Bread Rolls,Bakery & Dairy,Bakery,Pan-African,pack,pack of 6,2.49,,1,1,No,50,sweet bread rolls bakery & dairy bakery pan-african,active
+SKY-0237,Eggs,Bakery & Dairy,Dairy & Eggs,Pan-African,variant,tray,2.99,"Box of 6=1.99,Tray of 30=7.99",1,1,No,50,eggs bakery & dairy dairy & eggs pan-african,active
+SKY-0238,Butter,Bakery & Dairy,Dairy & Eggs,Pan-African,pack,250g pack,2.49,,1,1,No,50,butter bakery & dairy dairy & eggs pan-african,active
+SKY-0239,Blue Band Margarine,Bakery & Dairy,Dairy & Eggs,Pan-African,pack,tub,2.29,,1,1,No,50,blue band margarine bakery & dairy dairy & eggs pan-african,active
+SKY-0240,Cheese Slices,Bakery & Dairy,Dairy & Eggs,Pan-African,pack,pack,2.49,,1,1,No,50,cheese slices bakery & dairy dairy & eggs pan-african,active
+SKY-0241,Yoghurt Drink,Bakery & Dairy,Dairy & Eggs,Pan-African,pack,bottle,1.99,,1,1,No,50,yoghurt drink bakery & dairy dairy & eggs pan-african,active
+SKY-0242,Frozen Cassava Leaves,Frozen Foods,Frozen Vegetables & Leaves,Pan-African,pack,900g pack,4.99,,1,1,No,50,frozen cassava leaves frozen foods frozen vegetables & leaves pan-african,active
+SKY-0243,Frozen Ugu,Frozen Foods,Frozen Vegetables & Leaves,Pan-African,pack,450g pack,3.99,,1,1,No,50,frozen ugu frozen foods frozen vegetables & leaves pan-african,active
+SKY-0244,Frozen Spinach (Efo),Frozen Foods,Frozen Vegetables & Leaves,Pan-African,pack,450g pack,3.49,,1,1,No,50,frozen spinach  efo  frozen foods frozen vegetables & leaves pan-african,active
+SKY-0245,Frozen Okra (Cut),Frozen Foods,Frozen Vegetables & Leaves,Pan-African,pack,450g pack,3.49,,1,1,No,50,frozen okra  cut  frozen foods frozen vegetables & leaves pan-african,active
+SKY-0246,Frozen Bitter Leaf,Frozen Foods,Frozen Vegetables & Leaves,Pan-African,pack,450g pack,3.99,,1,1,No,50,frozen bitter leaf frozen foods frozen vegetables & leaves pan-african,active
+SKY-0247,Frozen Pepper Mix,Frozen Foods,Frozen Vegetables & Leaves,Pan-African,pack,450g pack,3.49,,1,1,No,50,frozen pepper mix frozen foods frozen vegetables & leaves pan-african,active
+SKY-0248,Frozen Meat Pie,Frozen Foods,Frozen Ready Foods,Pan-African,pack,pack of 4,4.99,,1,1,No,50,frozen meat pie frozen foods frozen ready foods pan-african,active
+SKY-0249,Frozen Samosa,Frozen Foods,Frozen Ready Foods,Pan-African,pack,pack of 12,4.49,,1,1,No,50,frozen samosa frozen foods frozen ready foods pan-african,active
+SKY-0250,Frozen Spring Rolls,Frozen Foods,Frozen Ready Foods,Pan-African,pack,pack of 12,3.99,,1,1,No,50,frozen spring rolls frozen foods frozen ready foods pan-african,active
+SKY-0251,Frozen Puff Puff,Frozen Foods,Frozen Ready Foods,Pan-African,pack,pack,3.99,,1,1,No,50,frozen puff puff frozen foods frozen ready foods pan-african,active
+SKY-0252,Frozen Pounded Yam,Frozen Foods,Frozen Ready Foods,Pan-African,pack,1kg pack,5.99,,1,1,No,50,frozen pounded yam frozen foods frozen ready foods pan-african,active
+SKY-0253,Frozen Fufu Balls,Frozen Foods,Frozen Ready Foods,Pan-African,pack,pack,4.49,,1,1,No,50,frozen fufu balls frozen foods frozen ready foods pan-african,active
+SKY-0254,Frozen Plantain Slices,Frozen Foods,Frozen Ready Foods,Pan-African,pack,1kg pack,3.99,,1,1,No,50,frozen plantain slices frozen foods frozen ready foods pan-african dodo,active
+SKY-0255,Frozen Yam Chips,Frozen Foods,Frozen Ready Foods,Pan-African,pack,1kg pack,4.49,,1,1,No,50,frozen yam chips frozen foods frozen ready foods pan-african,active
+SKY-0256,Frozen Moi Moi,Frozen Foods,Frozen Ready Foods,Pan-African,pack,pack of 6,5.99,,1,1,No,50,frozen moi moi frozen foods frozen ready foods pan-african,active
+SKY-0257,Brazilian Straight Bundle,Beauty & Hair,Human Hair Bundles,Pan-African,variant,bundle,34.99,"10 inch=34.99,12 inch=40.99,14 inch=46.99,16 inch=52.99,18 inch=58.99,20 inch=64.99,22 inch=70.99,24 inch=76.99,26 inch=82.99,28 inch=88.99,30 inch=94.99",1,1,No,50,brazilian straight bundle beauty & hair human hair bundles pan-african virgin human hair extensions,active
+SKY-0258,Brazilian Body Wave Bundle,Beauty & Hair,Human Hair Bundles,Pan-African,variant,bundle,36.99,"10 inch=36.99,12 inch=42.99,14 inch=48.99,16 inch=54.99,18 inch=60.99,20 inch=66.99,22 inch=72.99,24 inch=78.99,26 inch=84.99,28 inch=90.99,30 inch=96.99",1,1,No,50,brazilian body wave bundle beauty & hair human hair bundles pan-african virgin human hair,active
+SKY-0259,Deep Wave Bundle,Beauty & Hair,Human Hair Bundles,Pan-African,variant,bundle,38.99,"10 inch=38.99,12 inch=44.99,14 inch=50.99,16 inch=56.99,18 inch=62.99,20 inch=68.99,22 inch=74.99,24 inch=80.99,26 inch=86.99,28 inch=92.99,30 inch=98.99",1,1,No,50,deep wave bundle beauty & hair human hair bundles pan-african curly human hair,active
+SKY-0260,Kinky Curly Bundle,Beauty & Hair,Human Hair Bundles,Pan-African,variant,bundle,38.99,"10 inch=38.99,12 inch=44.99,14 inch=50.99,16 inch=56.99,18 inch=62.99,20 inch=68.99,22 inch=74.99,24 inch=80.99,26 inch=86.99,28 inch=92.99,30 inch=98.99",1,1,No,50,kinky curly bundle beauty & hair human hair bundles pan-african afro curls,active
+SKY-0261,Water Wave Bundle,Beauty & Hair,Human Hair Bundles,Pan-African,variant,bundle,38.99,"10 inch=38.99,12 inch=44.99,14 inch=50.99,16 inch=56.99,18 inch=62.99,20 inch=68.99,22 inch=74.99,24 inch=80.99,26 inch=86.99,28 inch=92.99,30 inch=98.99",1,1,No,50,water wave bundle beauty & hair human hair bundles pan-african,active
+SKY-0262,Loose Wave Bundle,Beauty & Hair,Human Hair Bundles,Pan-African,variant,bundle,37.99,"10 inch=37.99,12 inch=43.99,14 inch=49.99,16 inch=55.99,18 inch=61.99,20 inch=67.99,22 inch=73.99,24 inch=79.99,26 inch=85.99,28 inch=91.99,30 inch=97.99",1,1,No,50,loose wave bundle beauty & hair human hair bundles pan-african,active
+SKY-0263,Peruvian Straight Bundle,Beauty & Hair,Human Hair Bundles,Pan-African,variant,bundle,39.99,"10 inch=39.99,12 inch=45.99,14 inch=51.99,16 inch=57.99,18 inch=63.99,20 inch=69.99,22 inch=75.99,24 inch=81.99,26 inch=87.99,28 inch=93.99,30 inch=99.99",1,1,No,50,peruvian straight bundle beauty & hair human hair bundles pan-african,active
+SKY-0264,Burmese Curly Bundle,Beauty & Hair,Human Hair Bundles,Pan-African,variant,bundle,42.99,"10 inch=42.99,12 inch=48.99,14 inch=54.99,16 inch=60.99,18 inch=66.99,20 inch=72.99,22 inch=78.99,24 inch=84.99,26 inch=90.99,28 inch=96.99,30 inch=102.99",1,1,No,50,burmese curly bundle beauty & hair human hair bundles pan-african,active
+SKY-0265,3 Bundle Deal with 4x4 Closure,Beauty & Hair,Human Hair Bundles,Pan-African,variant,set,139.99,"10-12-14 inch=139.99,14-16-18 inch=169.99,18-20-22 inch=199.99",1,1,No,50,3 bundle deal with 4x4 closure beauty & hair human hair bundles pan-african deal bundle set,active
+SKY-0266,Human Hair Ponytail Drawstring,Beauty & Hair,Human Hair Bundles,Pan-African,variant,piece,29.99,"14 inch=29.99,18 inch=39.99,24 inch=54.99",1,1,No,50,human hair ponytail drawstring beauty & hair human hair bundles pan-african,active
+SKY-0267,Clip-In Human Hair Extensions,Beauty & Hair,Human Hair Bundles,Pan-African,variant,set,59.99,"16 inch=59.99,20 inch=79.99,24 inch=99.99",1,1,No,50,clip-in human hair extensions beauty & hair human hair bundles pan-african clip ins,active
+SKY-0268,4x4 Lace Closure,Beauty & Hair,"Wigs, Closures & Frontals",Pan-African,variant,piece,44.99,"10 inch=44.99,14 inch=54.99,18 inch=64.99,22 inch=79.99",1,1,No,50,"4x4 lace closure beauty & hair wigs, closures & frontals pan-african",active
+SKY-0269,13x4 Lace Frontal,Beauty & Hair,"Wigs, Closures & Frontals",Pan-African,variant,piece,59.99,"10 inch=59.99,14 inch=74.99,18 inch=89.99,22 inch=109.99",1,1,No,50,"13x4 lace frontal beauty & hair wigs, closures & frontals pan-african",active
+SKY-0270,HD Lace Front Wig Straight,Beauty & Hair,"Wigs, Closures & Frontals",Pan-African,variant,wig,119.99,"14 inch=119.99,18 inch=149.99,22 inch=189.99,26 inch=229.99",1,1,No,50,"hd lace front wig straight beauty & hair wigs, closures & frontals pan-african glueless",active
+SKY-0271,HD Lace Front Wig Body Wave,Beauty & Hair,"Wigs, Closures & Frontals",Pan-African,variant,wig,129.99,"14 inch=129.99,18 inch=159.99,22 inch=199.99",1,1,No,50,"hd lace front wig body wave beauty & hair wigs, closures & frontals pan-african",active
+SKY-0272,Curly Lace Wig,Beauty & Hair,"Wigs, Closures & Frontals",Pan-African,variant,wig,139.99,"14 inch=139.99,18 inch=169.99,22 inch=209.99",1,1,No,50,"curly lace wig beauty & hair wigs, closures & frontals pan-african",active
+SKY-0273,Bob Wig,Beauty & Hair,"Wigs, Closures & Frontals",Pan-African,variant,wig,89.99,"8 inch=89.99,10 inch=99.99,12 inch=109.99",1,1,No,50,"bob wig beauty & hair wigs, closures & frontals pan-african short",active
+SKY-0274,Synthetic Lace Front Wig,Beauty & Hair,"Wigs, Closures & Frontals",Pan-African,pack,wig,34.99,,1,1,No,50,"synthetic lace front wig beauty & hair wigs, closures & frontals pan-african",active
+SKY-0275,Wig Cap Pack,Beauty & Hair,"Wigs, Closures & Frontals",Pan-African,pack,pack,2.99,,1,1,No,50,"wig cap pack beauty & hair wigs, closures & frontals pan-african",active
+SKY-0276,Wig Glue / Lace Adhesive,Beauty & Hair,"Wigs, Closures & Frontals",Pan-African,pack,tube,7.99,,1,1,No,50,"wig glue / lace adhesive beauty & hair wigs, closures & frontals pan-african lace melt",active
+SKY-0277,Elastic Band for Wigs,Beauty & Hair,"Wigs, Closures & Frontals",Pan-African,pack,each,2.99,,1,1,No,50,"elastic band for wigs beauty & hair wigs, closures & frontals pan-african",active
+SKY-0278,Wig Stand,Beauty & Hair,"Wigs, Closures & Frontals",Pan-African,pack,each,6.99,,1,1,No,50,"wig stand beauty & hair wigs, closures & frontals pan-african",active
+SKY-0279,Xpression Braiding Hair,Beauty & Hair,Braiding & Extensions,Pan-African,variant,pack,4.99,"Colour 1 Black=4.99,Colour 1B=4.99,Colour 27=5.49,Colour 30=5.49,Colour 350=5.49,Burgundy=5.49",1,1,No,50,xpression braiding hair beauty & hair braiding & extensions pan-african kanekalon braids,active
+SKY-0280,Pre-Stretched Braiding Hair,Beauty & Hair,Braiding & Extensions,Pan-African,variant,pack,5.99,"Colour 1B=5.99,Colour 2=5.99,Colour 27=6.49",1,1,No,50,pre-stretched braiding hair beauty & hair braiding & extensions pan-african,active
+SKY-0281,Spring Twist Hair,Beauty & Hair,Braiding & Extensions,Pan-African,variant,pack,5.99,"Colour 1B=5.99,Colour 30=6.49",1,1,No,50,spring twist hair beauty & hair braiding & extensions pan-african,active
+SKY-0282,Passion Twist Hair,Beauty & Hair,Braiding & Extensions,Pan-African,variant,pack,7.99,"Colour 1B=7.99,Colour 27=8.49",1,1,No,50,passion twist hair beauty & hair braiding & extensions pan-african,active
+SKY-0283,Faux Locs Crochet Hair,Beauty & Hair,Braiding & Extensions,Pan-African,variant,pack,8.99,"18 inch=8.99,24 inch=10.99",1,1,No,50,faux locs crochet hair beauty & hair braiding & extensions pan-african,active
+SKY-0284,Marley Twist Hair,Beauty & Hair,Braiding & Extensions,Pan-African,variant,pack,6.99,"Colour 1B=6.99,Colour 30=7.49",1,1,No,50,marley twist hair beauty & hair braiding & extensions pan-african,active
+SKY-0285,Crochet Braids Water Wave,Beauty & Hair,Braiding & Extensions,Pan-African,pack,pack,7.99,,1,1,No,50,crochet braids water wave beauty & hair braiding & extensions pan-african,active
+SKY-0286,Braiding Gel (Strong Hold),Beauty & Hair,Braiding & Extensions,Pan-African,pack,jar,3.99,,1,1,No,50,braiding gel  strong hold  beauty & hair braiding & extensions pan-african,active
+SKY-0287,Edge Control,Beauty & Hair,Braiding & Extensions,Pan-African,variant,jar,4.99,"Small=4.99,Large=7.99",1,1,No,50,edge control beauty & hair braiding & extensions pan-african laid edges,active
+SKY-0288,Hair Rubber Bands,Beauty & Hair,Braiding & Extensions,Pan-African,pack,pack,1.99,,1,1,No,50,hair rubber bands beauty & hair braiding & extensions pan-african,active
+SKY-0289,Hair Clips Assorted,Beauty & Hair,Braiding & Extensions,Pan-African,pack,pack,2.49,,1,1,No,50,hair clips assorted beauty & hair braiding & extensions pan-african,active
+SKY-0290,Cantu Shea Butter Leave-In Conditioner,Beauty & Hair,Hair Care,American,pack,bottle,9.99,,1,1,No,50,cantu shea butter leave-in conditioner beauty & hair hair care american cantu,active
+SKY-0291,Cantu Curl Activator Cream,Beauty & Hair,Hair Care,Pan-African,pack,bottle,7.99,,1,1,No,50,cantu curl activator cream beauty & hair hair care pan-african,active
+SKY-0292,Mielle Rosemary Mint Hair Oil,Beauty & Hair,Hair Care,Pan-African,pack,bottle,11.99,,1,1,No,50,mielle rosemary mint hair oil beauty & hair hair care pan-african mielle,active
+SKY-0293,Mielle Rosemary Mint Strengthening Shampoo,Beauty & Hair,Hair Care,Pan-African,pack,bottle,10.99,,1,1,No,50,mielle rosemary mint strengthening shampoo beauty & hair hair care pan-african,active
+SKY-0294,As I Am Coconut CoWash,Beauty & Hair,Hair Care,Pan-African,pack,bottle,9.49,,1,1,No,50,as i am coconut cowash beauty & hair hair care pan-african,active
+SKY-0295,ORS Olive Oil Relaxer,Beauty & Hair,Hair Care,Pan-African,pack,kit,7.99,,1,1,No,50,ors olive oil relaxer beauty & hair hair care pan-african,active
+SKY-0296,Jamaican Black Castor Oil,Beauty & Hair,Hair Care,Caribbean,variant,bottle,8.99,"118ml=8.99,250ml=14.99",1,1,No,50,jamaican black castor oil beauty & hair hair care caribbean jbco,active
+SKY-0297,Palmer's Coconut Oil Hair Food,Beauty & Hair,Hair Care,Pan-African,pack,jar,6.99,,1,1,No,50,palmer's coconut oil hair food beauty & hair hair care pan-african,active
+SKY-0298,Eco Styler Gel,Beauty & Hair,Hair Care,Pan-African,variant,tub,5.99,"473ml=5.99,946ml=9.99",1,1,No,50,eco styler gel beauty & hair hair care pan-african,active
+SKY-0299,Dark and Lovely Relaxer,Beauty & Hair,Hair Care,Pan-African,pack,kit,6.99,,1,1,No,50,dark and lovely relaxer beauty & hair hair care pan-african,active
+SKY-0300,Just For Me Kids Hair Relaxer,Beauty & Hair,Hair Care,Pan-African,pack,kit,6.49,,1,1,No,50,just for me kids hair relaxer beauty & hair hair care pan-african,active
+SKY-0301,Pink Oil Moisturizer,Beauty & Hair,Hair Care,Pan-African,pack,bottle,4.99,,1,1,No,50,pink oil moisturizer beauty & hair hair care pan-african,active
+SKY-0302,Satin Bonnet,Beauty & Hair,Hair Care,Pan-African,pack,each,4.99,,1,1,No,50,satin bonnet beauty & hair hair care pan-african sleep cap,active
+SKY-0303,Silk Hair Scarf,Beauty & Hair,Hair Care,Pan-African,pack,each,5.99,,1,1,No,50,silk hair scarf beauty & hair hair care pan-african,active
+SKY-0304,Durag (Silky),Beauty & Hair,Hair Care,Pan-African,pack,each,3.99,,1,1,No,50,durag  silky  beauty & hair hair care pan-african,active
+SKY-0305,Wide-Tooth Comb,Beauty & Hair,Hair Care,Pan-African,pack,each,2.49,,1,1,No,50,wide-tooth comb beauty & hair hair care pan-african,active
+SKY-0306,Detangling Brush,Beauty & Hair,Hair Care,Pan-African,pack,each,5.99,,1,1,No,50,detangling brush beauty & hair hair care pan-african,active
+SKY-0307,Edge Brush,Beauty & Hair,Hair Care,Pan-African,pack,each,2.99,,1,1,No,50,edge brush beauty & hair hair care pan-african,active
+SKY-0308,Hair Steamer Cap,Beauty & Hair,Hair Care,Pan-African,pack,each,7.99,,1,1,No,50,hair steamer cap beauty & hair hair care pan-african,active
+SKY-0309,Raw Shea Butter (Ghana),Skin Care & Body,Shea Butter & Natural Oils,Ghanaian,variant,tub,5.99,"250g=5.99,500g=9.99,1kg=17.99",1,1,No,50,raw shea butter  ghana  skin care & body shea butter & natural oils ghanaian unrefined,active
+SKY-0310,Whipped Shea Butter,Skin Care & Body,Shea Butter & Natural Oils,Pan-African,variant,tub,8.99,"200g=8.99,400g=14.99",1,1,No,50,whipped shea butter skin care & body shea butter & natural oils pan-african,active
+SKY-0311,Cocoa Butter,Skin Care & Body,Shea Butter & Natural Oils,Pan-African,pack,stick,3.99,,1,1,No,50,cocoa butter skin care & body shea butter & natural oils pan-african,active
+SKY-0312,African Black Soap (Raw),Skin Care & Body,Shea Butter & Natural Oils,Pan-African,variant,bar,3.99,"Small=3.99,Large=6.99",1,1,No,50,african black soap  raw  skin care & body shea butter & natural oils pan-african,active
+SKY-0313,Dudu Osun Black Soap,Skin Care & Body,Shea Butter & Natural Oils,Pan-African,pack,bar,3.49,,1,1,No,50,dudu osun black soap skin care & body shea butter & natural oils pan-african,active
+SKY-0314,Baobab Oil,Skin Care & Body,Shea Butter & Natural Oils,Pan-African,pack,bottle,9.99,,1,1,No,50,baobab oil skin care & body shea butter & natural oils pan-african,active
+SKY-0315,Moringa Oil,Skin Care & Body,Shea Butter & Natural Oils,Pan-African,pack,bottle,9.99,,1,1,No,50,moringa oil skin care & body shea butter & natural oils pan-african,active
+SKY-0316,Black Seed Oil,Skin Care & Body,Shea Butter & Natural Oils,Pan-African,pack,bottle,8.99,,1,1,No,50,black seed oil skin care & body shea butter & natural oils pan-african,active
+SKY-0317,Castor Oil (Cosmetic),Skin Care & Body,Shea Butter & Natural Oils,Pan-African,variant,bottle,5.99,"100ml=5.99,250ml=9.99",1,1,No,50,castor oil  cosmetic  skin care & body shea butter & natural oils pan-african,active
+SKY-0318,Argan Oil,Skin Care & Body,Shea Butter & Natural Oils,Pan-African,pack,bottle,8.99,,1,1,No,50,argan oil skin care & body shea butter & natural oils pan-african,active
+SKY-0319,Coconut Oil (Cosmetic),Skin Care & Body,Shea Butter & Natural Oils,Pan-African,variant,jar,4.99,"250ml=4.99,500ml=7.99",1,1,No,50,coconut oil  cosmetic  skin care & body shea butter & natural oils pan-african,active
+SKY-0320,Palmer's Cocoa Butter Lotion,Skin Care & Body,Body Lotions & Creams,Pan-African,variant,bottle,5.99,"250ml=5.99,400ml=7.99",1,1,No,50,palmer's cocoa butter lotion skin care & body body lotions & creams pan-african,active
+SKY-0321,Vaseline Cocoa Radiant Lotion,Skin Care & Body,Body Lotions & Creams,Pan-African,pack,bottle,4.99,,1,1,No,50,vaseline cocoa radiant lotion skin care & body body lotions & creams pan-african,active
+SKY-0322,Nivea Body Lotion,Skin Care & Body,Body Lotions & Creams,Pan-African,pack,bottle,4.49,,1,1,No,50,nivea body lotion skin care & body body lotions & creams pan-african,active
+SKY-0323,Shea Moisture Body Lotion,Skin Care & Body,Body Lotions & Creams,Pan-African,pack,bottle,9.99,,1,1,No,50,shea moisture body lotion skin care & body body lotions & creams pan-african,active
+SKY-0324,Body Butter (Whipped),Skin Care & Body,Body Lotions & Creams,Pan-African,pack,tub,8.99,,1,1,No,50,body butter  whipped  skin care & body body lotions & creams pan-african,active
+SKY-0325,Petroleum Jelly,Skin Care & Body,Body Lotions & Creams,Pan-African,variant,tub,1.99,"50ml=1.99,250ml=3.49",1,1,No,50,petroleum jelly skin care & body body lotions & creams pan-african,active
+SKY-0326,Black Girl Sunscreen SPF 30,Skin Care & Body,Body Lotions & Creams,Pan-African,pack,tube,14.99,,1,1,No,50,black girl sunscreen spf 30 skin care & body body lotions & creams pan-african,active
+SKY-0327,Lip Balm Shea,Skin Care & Body,Body Lotions & Creams,Pan-African,pack,each,1.99,,1,1,No,50,lip balm shea skin care & body body lotions & creams pan-african,active
+SKY-0328,Shower Gel,Skin Care & Body,"Bath, Soap & Grooming",Pan-African,pack,bottle,3.49,,1,1,No,50,"shower gel skin care & body bath, soap & grooming pan-african",active
+SKY-0329,Body Scrub Sugar,Skin Care & Body,"Bath, Soap & Grooming",Pan-African,pack,jar,6.99,,1,1,No,50,"body scrub sugar skin care & body bath, soap & grooming pan-african",active
+SKY-0330,Loofah / Bath Sponge,Skin Care & Body,"Bath, Soap & Grooming",Pan-African,pack,each,1.99,,1,1,No,50,"loofah / bath sponge skin care & body bath, soap & grooming pan-african",active
+SKY-0331,African Net Sponge,Skin Care & Body,"Bath, Soap & Grooming",Pan-African,pack,each,2.99,,1,1,No,50,"african net sponge skin care & body bath, soap & grooming pan-african",active
+SKY-0332,Deodorant Roll-On,Skin Care & Body,"Bath, Soap & Grooming",Pan-African,pack,each,2.99,,1,1,No,50,"deodorant roll-on skin care & body bath, soap & grooming pan-african",active
+SKY-0333,Beard Oil,Skin Care & Body,"Bath, Soap & Grooming",Pan-African,pack,bottle,6.99,,1,1,No,50,"beard oil skin care & body bath, soap & grooming pan-african",active
+SKY-0334,Razor and Shaving Gel,Skin Care & Body,"Bath, Soap & Grooming",Pan-African,pack,set,4.99,,1,1,No,50,"razor and shaving gel skin care & body bath, soap & grooming pan-african",active
+SKY-0335,Perfume Body Spray,Skin Care & Body,"Bath, Soap & Grooming",Pan-African,pack,each,4.99,,1,1,No,50,"perfume body spray skin care & body bath, soap & grooming pan-african",active
+SKY-0336,Washing Powder,Household & Kitchen,Cleaning,Pan-African,variant,box,4.99,"1kg=4.99,3kg=11.99",1,1,No,50,washing powder household & kitchen cleaning pan-african omo ariel,active
+SKY-0337,Dettol Disinfectant,Household & Kitchen,Cleaning,Pan-African,variant,bottle,3.99,"500ml=3.99,1L=6.49",1,1,No,50,dettol disinfectant household & kitchen cleaning pan-african,active
+SKY-0338,Bleach,Household & Kitchen,Cleaning,Pan-African,pack,bottle,1.99,,1,1,No,50,bleach household & kitchen cleaning pan-african jik,active
+SKY-0339,Dish Soap,Household & Kitchen,Cleaning,Pan-African,pack,bottle,1.99,,1,1,No,50,dish soap household & kitchen cleaning pan-african,active
+SKY-0340,Kitchen Roll,Household & Kitchen,Cleaning,Pan-African,pack,pack of 2,2.49,,1,1,No,50,kitchen roll household & kitchen cleaning pan-african,active
+SKY-0341,Sponge Scourers,Household & Kitchen,Cleaning,Pan-African,pack,pack,1.49,,1,1,No,50,sponge scourers household & kitchen cleaning pan-african,active
+SKY-0342,Bin Bags,Household & Kitchen,Cleaning,Pan-African,pack,roll,2.49,,1,1,No,50,bin bags household & kitchen cleaning pan-african,active
+SKY-0343,Wooden Mortar and Pestle,Household & Kitchen,Kitchenware,Pan-African,variant,set,19.99,"Small=19.99,Medium=29.99,Large=44.99",1,1,No,50,wooden mortar and pestle household & kitchen kitchenware pan-african ukwa,active
+SKY-0344,Wooden Spoon (Omorogun),Household & Kitchen,Kitchenware,Pan-African,pack,each,3.99,,1,1,No,50,wooden spoon  omorogun  household & kitchen kitchenware pan-african,active
+SKY-0345,Calabash Bowl,Household & Kitchen,Kitchenware,Pan-African,pack,each,7.99,,1,1,No,50,calabash bowl household & kitchen kitchenware pan-african,active
+SKY-0346,Cooking Pot Set,Household & Kitchen,Kitchenware,Pan-African,pack,set,34.99,,1,1,No,50,cooking pot set household & kitchen kitchenware pan-african,active
+SKY-0347,Pressure Cooker,Household & Kitchen,Kitchenware,Pan-African,pack,each,39.99,,1,1,No,50,pressure cooker household & kitchen kitchenware pan-african,active
+SKY-0348,Cast Iron Frying Pan,Household & Kitchen,Kitchenware,Pan-African,pack,each,14.99,,1,1,No,50,cast iron frying pan household & kitchen kitchenware pan-african,active
+SKY-0349,Plantain Peeler,Household & Kitchen,Kitchenware,Pan-African,pack,each,2.99,,1,1,No,50,plantain peeler household & kitchen kitchenware pan-african,active
+SKY-0350,Grater,Household & Kitchen,Kitchenware,Pan-African,pack,each,3.49,,1,1,No,50,grater household & kitchen kitchenware pan-african,active
+SKY-0351,Food Storage Containers,Household & Kitchen,Kitchenware,Pan-African,pack,set,7.99,,1,1,No,50,food storage containers household & kitchen kitchenware pan-african,active
+SKY-0352,Aluminium Foil,Household & Kitchen,Kitchenware,Pan-African,pack,roll,2.49,,1,1,No,50,aluminium foil household & kitchen kitchenware pan-african,active
+SKY-0353,Charcoal Grill (Suya),Household & Kitchen,Kitchenware,Pan-African,pack,each,24.99,,1,1,No,50,charcoal grill  suya  household & kitchen kitchenware pan-african,active
+SKY-0354,Cerelac Baby Cereal,Household & Kitchen,Baby & Kids,Pan-African,pack,tin,3.99,,1,1,No,50,cerelac baby cereal household & kitchen baby & kids pan-african,active
+SKY-0355,Baby Wipes,Household & Kitchen,Baby & Kids,Pan-African,pack,pack,1.99,,1,1,No,50,baby wipes household & kitchen baby & kids pan-african,active
+SKY-0356,Nappies,Household & Kitchen,Baby & Kids,Pan-African,pack,pack,7.99,,1,1,No,50,nappies household & kitchen baby & kids pan-african,active
+SKY-0357,Baby Oil,Household & Kitchen,Baby & Kids,Pan-African,pack,bottle,3.49,,1,1,No,50,baby oil household & kitchen baby & kids pan-african,active
+SKY-0358,Baby Shea Butter,Household & Kitchen,Baby & Kids,Pan-African,pack,tub,5.99,,1,1,No,50,baby shea butter household & kitchen baby & kids pan-african,active
+SKY-0359,Moringa Powder,Health & Wellness,Herbal Teas & Roots,Pan-African,pack,100g pack,5.99,,1,1,No,50,moringa powder health & wellness herbal teas & roots pan-african,active
+SKY-0360,Dried Ginger Slices,Health & Wellness,Herbal Teas & Roots,Pan-African,pack,100g pack,3.49,,1,1,No,50,dried ginger slices health & wellness herbal teas & roots pan-african,active
+SKY-0361,Dried Hibiscus Flowers,Health & Wellness,Herbal Teas & Roots,Pan-African,pack,250g pack,4.99,,1,1,No,50,dried hibiscus flowers health & wellness herbal teas & roots pan-african,active
+SKY-0362,Neem Leaves Dried,Health & Wellness,Herbal Teas & Roots,Pan-African,pack,50g pack,3.99,,1,1,No,50,neem leaves dried health & wellness herbal teas & roots pan-african,active
+SKY-0363,Lemongrass Tea,Health & Wellness,Herbal Teas & Roots,Pan-African,pack,box,3.49,,1,1,No,50,lemongrass tea health & wellness herbal teas & roots pan-african,active
+SKY-0364,Baobab Powder,Health & Wellness,Herbal Teas & Roots,Pan-African,pack,100g pack,5.99,,1,1,No,50,baobab powder health & wellness herbal teas & roots pan-african,active
+SKY-0365,Turmeric Powder,Health & Wellness,Herbal Teas & Roots,Pan-African,pack,100g pack,2.99,,1,1,No,50,turmeric powder health & wellness herbal teas & roots pan-african,active
+SKY-0366,Seamoss,Health & Wellness,Herbal Teas & Roots,Pan-African,pack,100g pack,7.99,,1,1,No,50,seamoss health & wellness herbal teas & roots pan-african,active

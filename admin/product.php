@@ -1,0 +1,36 @@
+<?php require '_layout.php';$db=db();$sku=$_GET['sku']??'';
+require_once __DIR__.'/../inc/img.php';
+$s=$db->prepare('SELECT * FROM products WHERE sku=?');$s->execute([$sku]);
+$p=$s->fetch()?:['sku'=>'','name'=>'','category_id'=>0,'origin'=>'Pan-African','sold_by_type'=>'pack','unit_label'=>'pack','base_price'=>'','old_price'=>'','min_qty'=>1,'qty_step'=>1,'age_restricted'=>0,'stock'=>0,'search_keywords'=>'','status'=>'active','featured'=>0,'id'=>0];
+$err='';$pv=null;
+if($_SERVER['REQUEST_METHOD']==='POST'){$d=$_POST;$ck=[];for($i=1;$i<=3;$i++){$ck[$i]=img_ok($_FILES['photo'.$i]??[]);if(is_string($ck[$i])&&!$err)$err='Image '.$i.': '.$ck[$i];}
+ if(!$err&&!$p['id']&&$ck[1]!==true)$err='Please add at least 1 image. Image 1 is required for a new product.';
+ if($err){foreach(['name','category_id','origin','sold_by_type','unit_label','base_price','old_price','min_qty','qty_step','stock','status','search_keywords'] as $k)if(isset($d[$k]))$p[$k]=$d[$k];$p['age_restricted']=isset($d['age_restricted'])?1:0;$p['featured']=isset($d['featured'])?1:0;$pv=$d['variants']??'';}
+ else{$ty=in_array($d['sold_by_type'],['pack','weight','volume','piece','variant'])?$d['sold_by_type']:'pack';$kw=strtolower(trim($d['search_keywords']));
+  if(!$p['id'])$sku='SKY-'.str_pad($db->query('SELECT COALESCE(MAX(id),0)+1 FROM products')->fetchColumn(),4,'0',STR_PAD_LEFT);else $sku=$p['sku'];
+  $v=[$d['name'],(int)$d['category_id'],$d['origin'],$ty,$d['unit_label'],(float)$d['base_price'],(float)$d['min_qty']?:1,(float)$d['qty_step']?:1,isset($d['age_restricted'])?1:0,(int)$d['stock'],$kw,$d['status']=='hidden'?'hidden':'active',(float)($d['old_price']??0)?:null,isset($d['featured'])?1:0];
+  if($p['id']){$db->prepare('UPDATE products SET name=?,category_id=?,origin=?,sold_by_type=?,unit_label=?,base_price=?,min_qty=?,qty_step=?,age_restricted=?,stock=?,search_keywords=?,status=?,old_price=?,featured=? WHERE id=?')->execute(array_merge($v,[$p['id']]));$id=$p['id'];}
+  else{$db->prepare('INSERT INTO products(name,category_id,origin,sold_by_type,unit_label,base_price,min_qty,qty_step,age_restricted,stock,search_keywords,status,old_price,featured,sku) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)')->execute(array_merge($v,[$sku]));$id=$db->lastInsertId();}
+  $db->prepare('DELETE FROM product_variants WHERE product_id=?')->execute([$id]);
+  foreach(preg_split('/\r?\n/',$d['variants']) as $i=>$ln){[$l,$pr]=array_pad(explode('=',$ln,2),2,'');if(trim($l)!==''&&is_numeric(trim($pr)))$db->prepare('INSERT INTO product_variants(product_id,label,price,sort) VALUES(?,?,?,?)')->execute([$id,trim($l),trim($pr),$i]);}
+  $dir=__DIR__.'/../assets/products/';if(!is_dir($dir))@mkdir($dir,0755,true);
+  for($i=1;$i<=3;$i++){$fn=$dir.$sku.($i>1?'-'.$i:'').'.jpg';if($ck[$i]===true)img_save($_FILES['photo'.$i],$fn);elseif($i>1&&isset($d['rm'.$i])&&file_exists($fn))unlink($fn);}
+  header('Location: products.php?saved=1');exit;}}
+$vr=[];if($p['id'])foreach($db->query('SELECT label,price FROM product_variants WHERE product_id='.(int)$p['id'].' ORDER BY sort') as $x)$vr[]=$x['label'].'='.$x['price'];
+$cats=$db->query('SELECT s.id,s.name,t.name top FROM categories s JOIN categories t ON t.id=s.parent_id ORDER BY t.name,s.name')->fetchAll();$have=$p['sku']?product_images($p['sku']):[];
+ahead($p['id']?'Edit product':'Add product','products.php');?>
+<form method="post" enctype="multipart/form-data" class="fm"><?=csrf()?><?=$err?'<p class="bad">'.e($err).'</p>':''?>
+<div><b>Product photos</b> <span class="mut">1 to 3 pictures from your phone or computer. <?=$p['id']?'':'Image 1 is required.'?></span><div class="imgs"><?php for($i=1;$i<=3;$i++){$f=$p['sku']?'assets/products/'.$p['sku'].($i>1?'-'.$i:'').'.jpg':'';$has=$f&&file_exists(__DIR__.'/../'.$f); ?>
+<div class="slot"><b>Image <?=$i?> <small class="mut"><?=$i==1?'(main)':'(optional)'?></small></b><img class="pv" alt="" <?=$has?'src="../'.e($f).'?'.filemtime(__DIR__.'/../'.$f).'"':'hidden'?>><label class="pick"><?=$has?'Replace':'Choose from device'?><input type="file" name="photo<?=$i?>" accept="image/*"></label><?php if($i>1&&$has): ?><label class="chk"><input type="checkbox" name="rm<?=$i?>"> Remove this image</label><?php endif; ?></div><?php } ?></div></div>
+<label>Name<input name="name" required value="<?=e($p['name'])?>"></label>
+<label>Aisle<select name="category_id"><?php $g='';foreach($cats as $c){if($g!=$c['top']){if($g)echo '</optgroup>';echo '<optgroup label="'.e($c['top']).'">';$g=$c['top'];}echo '<option value="'.$c['id'].'" '.($c['id']==$p['category_id']?'selected':'').'>'.e($c['name']).'</option>';}echo '</optgroup>'; ?></select></label>
+<div class="g3"><label>Sold by<select name="sold_by_type"><?php foreach(['pack'=>'Pack / item','weight'=>'Weight (kg)','volume'=>'Volume (litre)','piece'=>'Piece / bunch','variant'=>'Sizes / variants'] as $k=>$l)echo '<option value="'.$k.'" '.($k==$p['sold_by_type']?'selected':'').'>'.$l.'</option>'; ?></select></label><label>Unit label<input name="unit_label" value="<?=e($p['unit_label'])?>" placeholder="kg, litre, 500g pack"></label><label>Origin<input name="origin" value="<?=e($p['origin'])?>"></label></div>
+<div class="g3"><label>Price (£)<input name="base_price" type="number" step="0.01" required value="<?=e($p['base_price'])?>"></label><label>Minimum qty<input name="min_qty" type="number" step="0.01" value="<?=e($p['min_qty'])?>"></label><label>Qty step<input name="qty_step" type="number" step="0.01" value="<?=e($p['qty_step'])?>"></label></div>
+<label>Old price (£), optional: shows the product as on sale<input name="old_price" type="number" step="0.01" value="<?=e($p['old_price']??'')?>"></label>
+<label class="chk"><input type="checkbox" name="featured" <?=!empty($p['featured'])?'checked':''?>> Feature this product in the homepage slideshow</label>
+<div class="g3"><label>Stock<input name="stock" type="number" value="<?=e($p['stock'])?>"></label><label>Status<select name="status"><option>active</option><option <?=$p['status']=='hidden'?'selected':''?>>hidden</option></select></label><label class="chk"><input type="checkbox" name="age_restricted" <?=$p['age_restricted']?'checked':''?>> 18+ only</label></div>
+<label>Variants, one per line as <code>Label=price</code> (leave empty if none)<textarea name="variants" rows="4"><?=e($pv??implode("\n",$vr))?></textarea></label>
+<label>Search keywords (synonyms, local names)<textarea name="search_keywords" rows="2"><?=e($p['search_keywords'])?></textarea></label>
+<button class="btn">Save product</button> <a href="products.php">Cancel</a></form>
+<script>document.querySelectorAll('.slot input[type=file]').forEach(i=>i.onchange=()=>{const f=i.files[0],im=i.closest('.slot').querySelector('.pv');if(!f)return;if(f.size>8*1024*1024){alert('Each image must be under 8 MB.');i.value='';return}im.src=URL.createObjectURL(f);im.hidden=false});
+document.querySelector('form.fm').onsubmit=e=>{if(<?=$p['id']?'false':'true'?>&&!document.querySelector('[name=photo1]').files.length){e.preventDefault();alert('Please add at least 1 image.')}};</script><?php afoot();

@@ -1,0 +1,11 @@
+<?php require '_layout.php';$db=db();
+if($_SERVER['REQUEST_METHOD']==='POST'){$d=$_POST;$id=(int)($d['id']??0);
+ if(isset($d['del'])&&$id)$db->prepare('DELETE FROM testimonials WHERE id=?')->execute([$id]);
+ elseif(trim($d['name'])!==''&&trim($d['body'])!==''){$v=[mb_substr(trim($d['name']),0,80),max(1,min(5,(int)($d['rating']??5))),mb_substr(trim($d['body']),0,600),mb_substr(trim($d['when_label']??''),0,40),(int)($d['sort']??0),isset($d['active'])?1:0];
+  if($id)$db->prepare('UPDATE testimonials SET name=?,rating=?,body=?,when_label=?,sort=?,active=? WHERE id=?')->execute(array_merge($v,[$id]));else $db->prepare('INSERT INTO testimonials(name,rating,body,when_label,sort,active) VALUES(?,?,?,?,?,?)')->execute($v);}
+ header('Location: testimonials.php?ok=1');exit;}
+ahead('Google reviews','testimonials.php');?><?=isset($_GET['ok'])?'<p class="okm">Saved</p>':''?>
+<p>These appear in the "Real customers, real reviews" slideshow on the homepage. <b>Only add reviews that real customers have left on your Google profile</b>, with their name as shown there. Set the star average, review count and Google link under Settings.</p>
+<?php foreach(array_merge($db->query('SELECT * FROM testimonials ORDER BY sort,id')->fetchAll(),[['id'=>0,'name'=>'','rating'=>5,'body'=>'','when_label'=>'','sort'=>0,'active'=>1]]) as $z): ?>
+<form method="post" class="zr rvf2"><?=csrf()?><input type="hidden" name="id" value="<?=$z['id']?>"><input name="name" placeholder="<?=$z['id']?'':'Reviewer name'?>" value="<?=e($z['name'])?>"><select name="rating"><?php for($i=5;$i>=1;$i--)echo '<option value="'.$i.'" '.($z['rating']==$i?'selected':'').'>'.$i.' stars</option>'; ?></select><input name="when_label" placeholder="e.g. 1 month ago" value="<?=e($z['when_label'])?>"><input name="sort" type="number" style="max-width:70px" title="Order" value="<?=e($z['sort'])?>"><label><input type="checkbox" name="active" <?=$z['active']?'checked':''?>> Show</label>
+<textarea name="body" rows="3" placeholder="Review text, exactly as written on Google" style="flex:1 1 100%"><?=e($z['body'])?></textarea><button class="btn"><?=$z['id']?'Save':'Add review'?></button><?php if($z['id']): ?><button class="btn ghost" name="del" value="1" onclick="return confirm('Delete this review?')">Delete</button><?php endif; ?></form><?php endforeach; afoot();

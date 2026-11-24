@@ -1,0 +1,22 @@
+<?php require_once __DIR__.'/../inc/db.php';session_set_cookie_params(['httponly'=>true,'samesite'=>'Lax','secure'=>!empty($_SERVER['HTTPS'])]);session_start();$db=db();ensure_payment_col();
+$db->exec("CREATE TABLE IF NOT EXISTS admin_users(id INT AUTO_INCREMENT PRIMARY KEY,username VARCHAR(40) NOT NULL UNIQUE,pass_hash VARCHAR(255) NOT NULL,role ENUM('owner','manager','staff') NOT NULL DEFAULT 'staff',active TINYINT(1) DEFAULT 1) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4");
+$db->exec("CREATE TABLE IF NOT EXISTS settings(k VARCHAR(40) PRIMARY KEY,v TEXT) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4");
+$RANK=['staff'=>1,'manager'=>2,'owner'=>3];$NU=(int)$db->query('SELECT COUNT(*) FROM admin_users')->fetchColumn();$err='';
+$ACL=['index.php'=>'staff','orders.php'=>'staff','products.php'=>'staff','product.php'=>'staff','reviews.php'=>'manager','promos.php'=>'manager','banners.php'=>'manager','recipes.php'=>'manager','blogs.php'=>'manager','collections.php'=>'manager','heroes.php'=>'manager','testimonials.php'=>'manager','subscribers.php'=>'manager','reports.php'=>'manager','export.php'=>'manager','import.php'=>'manager','zones.php'=>'owner','users.php'=>'owner','settings.php'=>'owner'];
+if(isset($_GET['logout'])){session_destroy();header('Location: index.php');exit;}
+if(isset($_POST['pw'])){$ok=false;
+ if($NU==0){if(hash_equals(ADMIN_PASSWORD,$_POST['pw'])){$_SESSION['role']='owner';$_SESSION['u']='owner';$ok=true;}}
+ else{$s=$db->prepare('SELECT * FROM admin_users WHERE username=? AND active=1');$s->execute([trim($_POST['user']??'')]);$u=$s->fetch();if($u&&password_verify($_POST['pw'],$u['pass_hash'])){$_SESSION['role']=$u['role'];$_SESSION['u']=$u['username'];$ok=true;}}
+ if($ok){session_regenerate_id(true);$_SESSION['a']=1;}else{usleep(700000);$err='Wrong username or password.';}}
+if(empty($_SESSION['a'])){echo '<!doctype html><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><link rel=stylesheet href="../assets/admin.css"><form method=post class=login><h2>Skye Admin</h2>'.($err?'<p class=bad>'.e($err).'</p>':'').($NU?'<input name=user placeholder=Username autofocus autocomplete=username>':'').'<input type=password name=pw placeholder=Password autocomplete=current-password><button class=btn>Sign in</button></form>';exit;}
+$_SESSION['t']=$_SESSION['t']??bin2hex(random_bytes(16));$ME=$_SESSION['role']??'staff';
+function csrf(){return '<input type="hidden" name="t" value="'.$_SESSION['t'].'">';}
+if($_SERVER['REQUEST_METHOD']==='POST'&&!isset($_POST['pw'])&&!hash_equals($_SESSION['t'],$_POST['t']??''))die('Session expired, go back and try again.');
+if($RANK[$ME]<$RANK[$ACL[basename($_SERVER['SCRIPT_NAME'])]??'owner']){http_response_code(403);die('You do not have access to this page.');}
+function ahead($title,$on){global $db,$RANK,$ME,$ACL,$NU;$new=$db->query("SELECT COUNT(*) FROM orders WHERE status='new'")->fetchColumn();$rv=$db->query("SELECT COUNT(*) FROM reviews WHERE approved=0")->fetchColumn();
+ $n=['index.php'=>'Dashboard','orders.php'=>'Orders'.($new?" <b class=bd>$new</b>":''),'products.php'=>'Products','reports.php'=>'Reports','promos.php'=>'Promo codes','banners.php'=>'Homepage banners','heroes.php'=>'Hero slides','collections.php'=>'Collections','testimonials.php'=>'Google reviews','recipes.php'=>'Recipes','blogs.php'=>'Blog stories','reviews.php'=>'Reviews'.($rv?" <b class=bd>$rv</b>":''),'subscribers.php'=>'Subscribers','zones.php'=>'Delivery zones','import.php'=>'Import CSV','users.php'=>'Staff logins','settings.php'=>'Settings'];
+ echo '<!doctype html><html><head><meta charset=utf-8><meta name=viewport content="width=device-width,initial-scale=1"><title>'.e($title).' | Skye Admin</title><link rel=stylesheet href="../assets/admin.css"></head><body><nav class=sn><h1>Skye<small>Admin · '.e($_SESSION['u']??'').' ('.e($ME).')</small></h1>';
+ foreach($n as $f=>$l)if($RANK[$ME]>=$RANK[$ACL[$f]])echo '<a href="'.$f.'" class="'.($on==$f?'on':'').'">'.$l.'</a>';
+ echo '<a href="../index.php" target=_blank>View shop</a><a href="?logout=1">Sign out</a></nav><main class=ad><h2>'.e($title).'</h2>'.($NU==0&&$ME=='owner'?'<p class=bad>Create your own owner login under Staff logins. Once one exists, the config.php password stops working.</p>':'');}
+function afoot(){echo '</main></body></html>';}
+function badge($s,$l=null){return '<span class="st s-'.e($s).'">'.e($l??ucfirst($s)).'</span>';}

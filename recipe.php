@@ -1,0 +1,14 @@
+<?php require 'inc/layout.php';require 'inc/cart.php';
+$s=db()->prepare('SELECT * FROM recipes WHERE slug=? AND active=1');$s->execute([$_GET['slug']??'']);$r=$s->fetch();
+if(!$r){http_response_code(404);head('Recipe not found');echo '<main class="wrap1"><h1 class="ph1">Recipe not found</h1><a class="b1x" href="recipes">All recipes</a></main>';foot();exit;}
+$it=db()->prepare("SELECT p.sku,i.qty FROM recipe_items i JOIN products p ON p.id=i.product_id WHERE i.recipe_id=? AND p.status='active'");$it->execute([$r['id']]);
+$pr=priced(array_map(fn($x)=>['sku'=>$x['sku'],'qty'=>$x['qty']],$it->fetchAll()));
+$items=array_map(fn($l)=>['key'=>$l['sku'].($l['variant']?'|'.$l['variant']:''),'sku'=>$l['sku'],'name'=>$l['name'],'variant'=>$l['variant'],'qty'=>$l['qty']],$pr['lines']);
+$GLOBALS['seo']=['canonical'=>u_rec($r['slug']),'type'=>'article'];$steps=[];foreach(preg_split('/\r?\n/',trim($r['steps'])) as $ln)if(trim($ln)!=='')$steps[]=['@type'=>'HowToStep','text'=>preg_replace('/^\d+\.\s*/','',$ln)];
+head($r['title'].' Recipe | Skye African Supermarket',$r['intro'].' Get every ingredient at Skye African Supermarket in '.seo_area().'.',crumbs([['Home',''],['Recipes','recipes'],[$r['title'],u_rec($r['slug'])]]).jsonld(['@context'=>'https://schema.org','@type'=>'Recipe','name'=>$r['title'],'description'=>$r['intro'],'recipeIngredient'=>array_map(fn($l)=>(0+$l['qty']).($l['unit']?' '.$l['unit']:' x').' '.$l['name'].($l['variant']?' ('.$l['variant'].')':''),$pr['lines']),'recipeInstructions'=>$steps]));?>
+<main class="wrap1"><nav class="crumb"><a href="recipes">Recipes</a> / <?=e($r['title'])?></nav><h1 class="ph1"><?=e($r['title'])?></h1><p><?=e($r['intro'])?></p>
+<div class="rcp"><section class="pn2"><h2>Ingredients</h2><?php foreach($pr['lines'] as $l): ?><div class="tr"><span><?=$l['unit']?(0+$l['qty']).' '.e($l['unit']):(0+$l['qty']).' ×'?> <?=e($l['name'])?><?=$l['variant']?' <small>('.e($l['variant']).')</small>':''?></span><b><?=money($l['total'])?></b></div><?php endforeach; ?><div class="tr big"><span>All ingredients</span><b><?=money($pr['subtotal'])?></b></div>
+<button class="place" id="addall" data-items="<?=e(json_encode($items))?>">Add all ingredients to basket</button><small class="fine">Pantry items you already have? Remove them in the basket.</small></section>
+<section class="pn2"><h2>Method</h2><ol class="steps"><?php foreach(preg_split('/\r?\n/',trim($r['steps'])) as $ln)if(trim($ln)!=='')echo '<li>'.e(preg_replace('/^\d+\.\s*/','',$ln)).'</li>'; ?></ol></section></div></main>
+<script>document.getElementById('addall').onclick=function(){const S=window.skye,c=S.get();JSON.parse(this.dataset.items).forEach(i=>{c[i.key]=c[i.key]||{sku:i.sku,name:i.name,variant:i.variant,qty:0};c[i.key].qty=Math.round((c[i.key].qty+i.qty)*100)/100});S.set(c);document.querySelector('.cartpill').click()}</script>
+<?php foot();
