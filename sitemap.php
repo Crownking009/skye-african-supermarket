@@ -1,5 +1,5 @@
 <?php require 'inc/db.php';header('Content-Type: application/xml; charset=utf-8');
-$u=[['',null,'1.0']];foreach(['shop','recipes','blog','faq','delivery','about','contact'] as $x)$u[]=[$x,null,'0.7'];
+$u=[['',null,'1.0']];foreach(['shop','recipes','blog','faq','delivery','terms','returns','privacy','about','contact'] as $x)$u[]=[$x,null,'0.7'];
 foreach(db()->query('SELECT slug,updated_at FROM blog_posts WHERE active=1') as $p)$u[]=['blog/'.$p['slug'],$p['updated_at'],'0.6'];
 foreach(db()->query('SELECT slug FROM categories') as $c)$u[]=[u_cat($c['slug']),null,'0.8'];
 try{foreach(db()->query('SELECT slug FROM collections WHERE active=1') as $c)$u[]=[u_col($c['slug']),null,'0.6'];}catch(Exception $x){}

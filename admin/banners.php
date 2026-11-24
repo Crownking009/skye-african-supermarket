@@ -1,7 +1,7 @@
 <?php require '_layout.php';$db=db();
 if($_SERVER['REQUEST_METHOD']==='POST'){$d=$_POST;$id=(int)($d['id']??0);
  if(isset($d['del'])&&$id)$db->prepare('DELETE FROM banners WHERE id=?')->execute([$id]);
- elseif(trim($d['title'])!==''){$v=[trim($d['title']),trim($d['subtitle']),trim($d['link']),trim($d['btn']),(int)$d['color']%3,(int)$d['sort'],isset($d['active'])?1:0];
+ elseif(trim($d['title'])!==''){$v=[trim($d['title']),trim($d['subtitle']),safe_link($d['link']??''),trim($d['btn']),(int)$d['color']%3,(int)$d['sort'],isset($d['active'])?1:0];
   if($id)$db->prepare('UPDATE banners SET title=?,subtitle=?,link=?,btn=?,color=?,sort=?,active=? WHERE id=?')->execute(array_merge($v,[$id]));else $db->prepare('INSERT INTO banners(title,subtitle,link,btn,color,sort,active) VALUES(?,?,?,?,?,?,?)')->execute($v);}
  header('Location: banners.php?ok=1');exit;}
 ahead('Homepage banners','banners.php');?><?=isset($_GET['ok'])?'<p class="okm">Saved</p>':''?><p>Offer cards shown under the homepage hero. Link to any page, for example <code>shop.php?cat=beauty-hair</code>.</p>

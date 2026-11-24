@@ -228,3 +228,11 @@ a.add{display:block;text-align:center}.add{border-radius:12px;padding:13px;font-
  .bnav a,.bnav button{font-size:.62rem}
  .blog-grid,.home-blog-grid{grid-template-columns:minmax(0,1fr)}
 }
+.legal-page{max-width:900px}
+.legal-page h2{margin-top:26px}
+.legal-page a:not(.b1x){color:var(--pu);text-decoration:underline;text-underline-offset:3px}
+.policy-template{background:#fff;border:1px solid var(--ln);border-radius:12px;padding:16px 20px}
+.policy-template p{margin:8px 0}
+.product-cat-tags{display:flex;flex-wrap:wrap;gap:7px}
+.product-cat-tags a{background:#F5EEFA;color:var(--pu);padding:4px 9px;border-radius:999px;font-size:.8rem;font-weight:600}
+.product-description{line-height:1.7;color:var(--ink);white-space:pre-line;margin:0}

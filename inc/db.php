@@ -3,8 +3,11 @@ if(!function_exists('mb_strlen')){function mb_strlen($s){return (int)preg_match_
 if(!function_exists('mb_substr')){function mb_substr($s,$a,$l=null){return implode('',array_slice(preg_split('//u',(string)$s,-1,PREG_SPLIT_NO_EMPTY)?:[],$a,$l));}}
 if(!function_exists('mb_strtoupper')){function mb_strtoupper($s){return strtoupper((string)$s);}}
 function db(){static $p;if(!$p)$p=new PDO('mysql:host='.DB_HOST.';dbname='.DB_NAME.';charset=utf8mb4',DB_USER,DB_PASS,[PDO::ATTR_ERRMODE=>PDO::ERRMODE_EXCEPTION,PDO::ATTR_DEFAULT_FETCH_MODE=>PDO::FETCH_ASSOC,PDO::ATTR_EMULATE_PREPARES=>true]);return $p;}
+function rate_allowed($key,$limit,$window=900,$lock=900){$p=db();$now=time();$key=hash('sha256',(string)$key);$p->prepare('INSERT IGNORE INTO request_limits(bucket,hits,window_start,blocked_until) VALUES(?,0,?,0)')->execute([$key,$now]);$p->beginTransaction();try{$s=$p->prepare('SELECT hits,window_start,blocked_until FROM request_limits WHERE bucket=? FOR UPDATE');$s->execute([$key]);$r=$s->fetch();if((int)$r['blocked_until']>$now){$p->commit();return false;}if($now-(int)$r['window_start']>=$window){$r['hits']=0;$r['window_start']=$now;}$hits=(int)$r['hits']+1;$blocked=$hits>$limit?$now+$lock:0;$p->prepare('UPDATE request_limits SET hits=?,window_start=?,blocked_until=? WHERE bucket=?')->execute([$hits,$r['window_start'],$blocked,$key]);$p->commit();return $hits<=$limit;}catch(Throwable $x){if($p->inTransaction())$p->rollBack();throw $x;}}
+function rate_clear($key){db()->prepare('DELETE FROM request_limits WHERE bucket=?')->execute([hash('sha256',(string)$key)]);}
 function e($s){return htmlspecialchars((string)$s,ENT_QUOTES,'UTF-8');}
 function slug($s){return trim(preg_replace('/[^a-z0-9]+/','-',strtolower($s)),'-');}
+function safe_link($s,$fallback='shop'){$s=trim((string)$s);if(preg_match('#^https://[^\s<>"\']+$#i',$s)&&filter_var($s,FILTER_VALIDATE_URL))return $s;if(preg_match('#^(?!//)[/A-Za-z0-9._~?&=%\#-]+$#D',$s))return $s;return $fallback;}
 function money($v){return '£'.number_format((float)$v,2);}
 // Synonym groups: searching any word also matches the others
 const SYN=[['garri','gari','eba'],['ugu','pumpkin leaves','fluted'],['okra','okro'],['egusi','melon'],['poundo','pounded yam','iyan'],['plantain','dodo'],['braids','braiding','xpression','kanekalon'],['wig','wigs','lace'],['hair','bundle','bundles','extensions'],['shea','shea butter'],['crayfish','cray fish'],['beans','ewa'],['pepper','ata','scotch bonnet'],['zobo','hibiscus','sorrel'],['malt','malta','maltina'],['yam','isu'],['snail','igbin']];
@@ -15,7 +18,7 @@ function terms($q){
 function find($q='',$f=[],$limit=48){
  $w=['p.status="active"'];$s=['0'];$a=[];$i=0;
  foreach(terms($q) as $g){$or=[];foreach($g as $x){$k=':t'.(++$i);$a[$k]='%'.$x.'%';$or[]="p.name LIKE $k OR p.search_keywords LIKE $k";$s[]="(p.name LIKE $k)*3";}$w[]='('.implode(' OR ',$or).')';}
- if(!empty($f['cat'])){$w[]='(s.slug=:c OR t.slug=:c)';$a[':c']=$f['cat'];}
+ if(!empty($f['cat'])){$w[]='(s.slug=:c OR t.slug=:c OR EXISTS(SELECT 1 FROM product_category_map pcm JOIN categories pc ON pc.id=pcm.category_id LEFT JOIN categories pt ON pt.id=pc.parent_id WHERE pcm.product_id=p.id AND (pc.slug=:c OR pt.slug=:c)))';$a[':c']=$f['cat'];}
  if(!empty($f['origin'])){$w[]='p.origin=:o';$a[':o']=$f['origin'];}
  if(!empty($f['max'])){$w[]='p.base_price<=:m';$a[':m']=(float)$f['max'];}
  $o=['price_asc'=>'p.base_price ASC','price_desc'=>'p.base_price DESC','name'=>'p.name ASC','new'=>'p.id DESC','pop'=>'(SELECT COUNT(*) FROM order_items i WHERE i.sku=p.sku) DESC,p.name ASC'][$f['sort']??'']??'score DESC,p.name ASC';
@@ -56,6 +59,7 @@ function open_status(){$d=new DateTime('now',new DateTimeZone('Europe/London'));
 
 function base_url(){$s=((!empty($_SERVER['HTTPS'])&&$_SERVER['HTTPS']!=='off')||($_SERVER['HTTP_X_FORWARDED_PROTO']??'')==='https')?'https':'http';$d=rtrim(str_replace('\\','/',dirname($_SERVER['SCRIPT_NAME'])),'/');return $s.'://'.$_SERVER['HTTP_HOST'].$d.'/';}
 function abs_url($r){return base_url().ltrim($r,'/');}
+function site_base(){$script=str_replace('\\','/',$_SERVER['SCRIPT_NAME']??'/');$dir=rtrim(dirname($script),'/');$dir=preg_replace('#/(admin|api)$#','',$dir);return ((!empty($_SERVER['HTTPS'])&&$_SERVER['HTTPS']!=='off')?'https':'http').'://'.($_SERVER['SERVER_NAME']??$_SERVER['HTTP_HOST']??'localhost').rtrim($dir,'/').'/';}
 function u_product($p){return 'product/'.slug($p['name']).'--'.rawurlencode($p['sku']);}
 function u_cat($s){return 'shop/'.$s;}function u_col($s){return 'collection/'.$s;}function u_rec($s){return 'recipe/'.$s;}
 function seo_area(){return setting('seo_area','Wolverton, Milton Keynes');}

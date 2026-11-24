@@ -1,19 +1,19 @@
-<?php require '../inc/cart.php';session_start();header('Content-Type: application/json');
-$in=json_decode(file_get_contents('php://input'),true)?:[];
-function bad($m){http_response_code(422);echo json_encode(['ok'=>false,'error'=>$m]);exit;}
-ensure_payment_col();$_SESSION['ot']=array_values(array_filter($_SESSION['ot']??[],fn($t)=>$t>time()-3600));if(count($_SESSION['ot'])>=6)bad('Too many orders from this device in the last hour. Please message us on WhatsApp.');
-$r=priced($in['cart']??[]);if(!$r['lines'])bad('Your basket is empty.');
-foreach($r['lines'] as $l){if($l['stock']<=0)bad($l['name'].' is out of stock. Please remove it from your basket.');if($l['qty']>$l['stock'])bad('Only '.$l['stock'].' of '.$l['name'].' left. Please lower the quantity.');}
-$name=trim($in['name']??'');$phone=trim($in['phone']??'');$m=($in['method']??'')=='delivery'?'delivery':'collect';
-if(mb_strlen($name)<2)bad('Please enter your name.');if(strlen(preg_replace('/\D/','',$phone))<7)bad('Please enter a valid phone number.');
-if($m=='delivery'&&(trim($in['address']??'')==''||trim($in['postcode']??'')==''))bad('Please enter your delivery address and postcode.');
-if($r['age']&&empty($in['age_ok']))bad('Please confirm you are 18 or over to buy age-restricted items.');
-$d=delivery($m,$in['postcode']??'',$r['subtotal']);if(!$d['ok'])bad($d['note']);
-$pay=(($in['payment']??'')=='transfer'&&bank())?'transfer':'cash';$pr=promo($in['promo']??'',$r['subtotal']);if(!$pr['ok'])bad($pr['msg']);$total=round($r['subtotal']-$pr['discount']+$d['fee'],2);$ref='SKY-'.strtoupper(bin2hex(random_bytes(4)));
-$sub=in_array($in['sub']??'',['substitute','call','none'])?$in['sub']:'substitute';$date=preg_match('/^\d{4}-\d{2}-\d{2}$/',$in['date']??'')?$in['date']:null;
-$pdo=db();$pdo->beginTransaction();
-$pdo->prepare('INSERT INTO orders(ref,name,phone,email,method,address,town,postcode,zone,slot_date,slot_time,substitution,notes,subtotal,delivery_fee,total,promo_code,discount,payment) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)')->execute([$ref,$name,$phone,trim($in['email']??''),$m,trim($in['address']??''),trim($in['town']??''),strtoupper(trim($in['postcode']??'')),$d['zone'],$date,mb_substr($in['slot']??'',0,40),$sub,mb_substr(trim($in['notes']??''),0,1000),$r['subtotal'],$d['fee'],$total,$pr['code']?:null,$pr['discount'],$pay]);
-$id=$pdo->lastInsertId();
-foreach($r['lines'] as $l)$pdo->prepare('INSERT INTO order_items(order_id,sku,name,variant,qty,unit,unit_price,line_total) VALUES(?,?,?,?,?,?,?,?)')->execute([$id,$l['sku'],$l['name'],$l['variant'],$l['qty'],$l['unit'],$l['unit_price'],$l['total']]);
-foreach($r['lines'] as $l)$pdo->prepare('UPDATE products SET stock=GREATEST(0,stock-?) WHERE sku=?')->execute([(int)ceil($l['qty']),$l['sku']]);
-$pdo->commit();$_SESSION['ref']=$ref;$_SESSION['ot'][]=time();echo json_encode(['ok'=>true,'ref'=>$ref]);
+<?php
+require '../inc/cart.php';session_set_cookie_params(['httponly'=>true,'samesite'=>'Lax','secure'=>!empty($_SERVER['HTTPS'])&&$_SERVER['HTTPS']!=='off']);session_start();header('Content-Type: application/json');
+$in=json_decode(file_get_contents('php://input'),true)?:[];$pdo=db();
+function bad($m){$p=db();if($p->inTransaction())$p->rollBack();http_response_code(422);echo json_encode(['ok'=>false,'error'=>$m]);exit;}
+ensure_payment_col();if(!hash_equals($_SESSION['public_csrf']??'',(string)($in['csrf']??'')))bad('Checkout expired. Reload the page and try again.');
+$_SESSION['ot']=array_values(array_filter($_SESSION['ot']??[],fn($t)=>$t>time()-3600));if(count($_SESSION['ot'])>=6||!rate_allowed('order-create-ip:'.($_SERVER['REMOTE_ADDR']??'unknown'),20,3600,3600))bad('Too many order attempts. Please try again later.');
+$cart=$in['cart']??[];if(!is_array($cart)||count($cart)>80)bad('Your basket could not be processed. Please review it and try again.');$skus=[];foreach($cart as $line){$sku=(string)($line['sku']??'');if(preg_match('/^[A-Za-z0-9_-]{1,30}$/',$sku))$skus[$sku]=$sku;}if(!$skus)bad('Your basket is empty.');sort($skus,SORT_STRING);
+try{$pdo->beginTransaction();$marks=implode(',',array_fill(0,count($skus),'?'));$lock=$pdo->prepare("SELECT sku,stock,status FROM products WHERE sku IN($marks) ORDER BY sku FOR UPDATE");$lock->execute($skus);$locked=[];foreach($lock as $row)$locked[$row['sku']]=$row;
+ $r=priced($cart);if(!$r['lines'])bad('Your basket is empty or the items are no longer available.');$need=[];foreach($r['lines'] as $line){$sku=$line['sku'];$need[$sku]=($need[$sku]??0)+(int)ceil((float)$line['qty']);if(empty($locked[$sku])||$locked[$sku]['status']!=='active')bad($line['name'].' is no longer available.');}
+ foreach($need as $sku=>$qty){$stock=(int)$locked[$sku]['stock'];if($stock<=0)bad($locked[$sku]['sku'].' is out of stock. Please remove it from your basket.');if($qty>$stock)bad('There is not enough stock for one or more items. Please review your basket.');}
+ $name=trim((string)($in['name']??''));$phone=trim((string)($in['phone']??''));$email=trim((string)($in['email']??''));$m=($in['method']??'')==='delivery'?'delivery':'collect';
+ if(mb_strlen($name)<2||mb_strlen($name)>120)bad('Please enter your name.');if(strlen(preg_replace('/\D/','',$phone))<7||strlen($phone)>40)bad('Please enter a valid phone number.');if($email!==''&&!filter_var($email,FILTER_VALIDATE_EMAIL))bad('Please enter a valid email address.');
+ if($m==='delivery'&&(trim((string)($in['address']??''))===''||trim((string)($in['postcode']??''))===''))bad('Please enter your delivery address and postcode.');if($r['age']&&empty($in['age_ok']))bad('Please confirm you are 18 or over to buy age-restricted items.');
+ $d=delivery($m,$in['postcode']??'',$r['subtotal']);if(!$d['ok'])bad($d['note']);$pay=(($in['payment']??'')==='transfer'&&bank())?'transfer':'cash';$pr=promo($in['promo']??'',$r['subtotal']);if(!$pr['ok'])bad($pr['msg']);$total=round($r['subtotal']-$pr['discount']+$d['fee'],2);$ref='SKY-'.strtoupper(bin2hex(random_bytes(4)));$sub=in_array($in['sub']??'',['substitute','call','none'],true)?$in['sub']:'substitute';$date=preg_match('/^\d{4}-\d{2}-\d{2}$/',$in['date']??'')?$in['date']:null;
+ $pdo->prepare('INSERT INTO orders(ref,name,phone,email,method,address,town,postcode,zone,slot_date,slot_time,substitution,notes,subtotal,delivery_fee,total,promo_code,discount,payment,payment_status) VALUES(?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?,?)')->execute([$ref,$name,$phone,$email,$m,trim((string)($in['address']??'')),trim((string)($in['town']??'')),strtoupper(trim((string)($in['postcode']??''))),$d['zone'],$date,mb_substr((string)($in['slot']??''),0,40),$sub,mb_substr(trim((string)($in['notes']??'')),0,1000),$r['subtotal'],$d['fee'],$total,$pr['code']?:null,$pr['discount'],$pay,$pay==='transfer'?'unpaid':'not_applicable']);$id=$pdo->lastInsertId();
+ $oi=$pdo->prepare('INSERT INTO order_items(order_id,sku,name,variant,qty,unit,unit_price,line_total) VALUES(?,?,?,?,?,?,?,?)');foreach($r['lines'] as $line)$oi->execute([$id,$line['sku'],$line['name'],$line['variant'],$line['qty'],$line['unit'],$line['unit_price'],$line['total']]);
+ $deduct=$pdo->prepare("UPDATE products SET stock=stock-? WHERE sku=? AND status='active' AND stock>=?");foreach($need as $sku=>$qty){$deduct->execute([$qty,$sku,$qty]);if($deduct->rowCount()!==1)bad('Stock changed while placing your order. Please review your basket and try again.');}
+ $pdo->commit();$_SESSION['ref']=$ref;$_SESSION['ot'][]=time();echo json_encode(['ok'=>true,'ref'=>$ref]);
+}catch(Throwable $x){if($pdo->inTransaction())$pdo->rollBack();error_log('Order placement failed: '.$x->getMessage());http_response_code(500);echo json_encode(['ok'=>false,'error'=>'We could not place the order right now. Please try again.']);}

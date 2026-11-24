@@ -1,0 +1,18 @@
+<?php
+require_once __DIR__.'/../inc/db.php';
+session_set_cookie_params(['httponly'=>true,'samesite'=>'Lax','secure'=>!empty($_SERVER['HTTPS'])]);session_start();
+$db=db();$db->exec("CREATE TABLE IF NOT EXISTS admin_password_resets(id INT AUTO_INCREMENT PRIMARY KEY,admin_id INT NOT NULL,token_hash CHAR(64) NOT NULL UNIQUE,expires_at DATETIME NOT NULL,used_at DATETIME NULL,created_at TIMESTAMP NOT NULL DEFAULT CURRENT_TIMESTAMP,KEY(admin_id),FOREIGN KEY(admin_id) REFERENCES admin_users(id) ON DELETE CASCADE) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4");
+$_SESSION['forgot_csrf']=$_SESSION['forgot_csrf']??bin2hex(random_bytes(32));$message='If an active admin account uses that email, a password reset link will be sent.';$error='';
+if($_SERVER['REQUEST_METHOD']==='POST'){
+ if(!hash_equals($_SESSION['forgot_csrf'],$_POST['csrf']??''))$error='Session expired. Reload the page and try again.';
+ elseif(!rate_allowed('admin-reset-request:'.($_SERVER['REMOTE_ADDR']??'unknown'),5,3600,3600))$error='Too many reset requests. Try again in an hour.';
+ else{$email=strtolower(trim((string)($_POST['email']??'')));if(filter_var($email,FILTER_VALIDATE_EMAIL)&&filter_var(ADMIN_RESET_FROM,FILTER_VALIDATE_EMAIL)){
+  $s=$db->prepare('SELECT id,username,email FROM admin_users WHERE email=? AND active=1 LIMIT 1');$s->execute([$email]);$admin=$s->fetch();
+  if($admin){$token=bin2hex(random_bytes(32));$db->prepare('DELETE FROM admin_password_resets WHERE admin_id=? AND used_at IS NULL')->execute([$admin['id']]);$db->prepare('INSERT INTO admin_password_resets(admin_id,token_hash,expires_at) VALUES(?,?,DATE_ADD(NOW(),INTERVAL 20 MINUTE))')->execute([$admin['id'],hash('sha256',$token)]);
+   $server=$_SERVER['SERVER_NAME']??$_SERVER['HTTP_HOST']??'';$server=preg_replace('/[^A-Za-z0-9.:-]/','',$server);$scheme=(!empty($_SERVER['HTTPS'])&&$_SERVER['HTTPS']!=='off')?'https':'http';$root=dirname(dirname(str_replace('\\','/',$_SERVER['SCRIPT_NAME']??'/admin/forgot.php')));$base=$scheme.'://'.$server.rtrim($root,'/').'/';$url=$base.'admin/reset.php?token='.rawurlencode($token);
+   $subject='Skye admin password reset';$body="A password reset was requested for your Skye admin account.\n\nOpen this one-time link within 20 minutes:\n$url\n\nIf you did not request this, ignore this email. The link can only be used once.";$headers='From: Skye African Supermarket <'.ADMIN_RESET_FROM.">\r\nContent-Type: text/plain; charset=UTF-8\r\n";
+   if(!@mail($admin['email'],$subject,$body,$headers,'-f'.ADMIN_RESET_FROM)){$db->prepare('DELETE FROM admin_password_resets WHERE token_hash=?')->execute([hash('sha256',$token)]);$error='Password reset email could not be sent. Check the hosting mail configuration and try again.';}
+  }
+ }else $error='Enter a valid email address.';}
+}
+?><!doctype html><html lang="en"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><link rel="stylesheet" href="../assets/admin.css"><title>Forgot password | Skye Admin</title></head><body><main class="ad" style="max-width:520px;margin:8vh auto"><h2>Forgot admin password</h2><p>Enter the recovery email saved on your admin account. Reset links expire after 20 minutes and can only be used once.</p><?php if($error): ?><p class="bad"><?=e($error)?></p><?php elseif($_SERVER['REQUEST_METHOD']==='POST'): ?><p class="okm"><?=e($message)?></p><?php endif; ?><form method="post" class="fm"><input type="hidden" name="csrf" value="<?=e($_SESSION['forgot_csrf'])?>"><label>Recovery email<input type="email" name="email" autocomplete="email" required></label><button class="btn">Send reset link</button></form><p><a href="index.php">Back to sign in</a></p></main></body></html>

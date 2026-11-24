@@ -1,7 +1,7 @@
 <?php require '_layout.php';require_once __DIR__.'/../inc/img.php';$db=db();$dir=__DIR__.'/../assets/hero/';if(!is_dir($dir))@mkdir($dir,0755,true);
 if($_SERVER['REQUEST_METHOD']==='POST'){$d=$_POST;$id=(int)($d['id']??0);$q='ok=1';
  if(isset($d['del'])&&$id){$db->prepare('DELETE FROM hero_slides WHERE id=?')->execute([$id]);@unlink($dir.$id.'.jpg');}
- elseif(trim($d['title']??'')!==''){$v=[mb_substr(trim($d['title']),0,140),mb_substr(trim($d['subtitle']??''),0,220),mb_substr(trim($d['btn']??''),0,40),mb_substr(trim($d['link']??'shop'),0,255),(int)($d['color']??0)%3,(int)($d['sort']??0),isset($d['active'])?1:0];
+ elseif(trim($d['title']??'')!==''){$v=[mb_substr(trim($d['title']),0,140),mb_substr(trim($d['subtitle']??''),0,220),mb_substr(trim($d['btn']??''),0,40),mb_substr(safe_link($d['link']??'shop'),0,255),(int)($d['color']??0)%3,(int)($d['sort']??0),isset($d['active'])?1:0];
   if($id)$db->prepare('UPDATE hero_slides SET title=?,subtitle=?,btn=?,link=?,color=?,sort=?,active=? WHERE id=?')->execute(array_merge($v,[$id]));else{$db->prepare('INSERT INTO hero_slides(title,subtitle,btn,link,color,sort,active) VALUES(?,?,?,?,?,?,?)')->execute($v);$id=$db->lastInsertId();}
   $ck=img_ok($_FILES['photo']??[]);if($ck===true)img_save($_FILES['photo'],$dir.$id.'.jpg',1400);elseif(is_string($ck))$q='err='.urlencode($ck);elseif(isset($d['rmimg']))@unlink($dir.$id.'.jpg');}
  header('Location: heroes.php?'.$q);exit;}
