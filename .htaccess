@@ -4,6 +4,7 @@ RewriteEngine On
 RewriteRule ^sitemap\.xml$ sitemap.php [L]
 RewriteRule ^robots\.txt$ robots.php [L]
 RewriteRule ^inc/ - [F]
+RewriteRule (^|/)\.git - [F]
 RewriteRule ^(shop|recipes|contact|cart|checkout|faq|about|delivery|terms|returns|privacy)/?$ $1.php [L,QSA]
 RewriteRule ^blog/?$ blog.php [L,QSA]
 RewriteRule ^blog/([a-z0-9-]+)/?$ blog.php?slug=$1 [L,QSA]

@@ -12,6 +12,6 @@ SKYE AFRICAN SUPERMARKET - Phase 1
 8. (Phone photos are big: .user.ini raises the upload limit to 12 MB per image. If uploads still fail, raise upload_max_filesize and post_max_size in cPanel > MultiPHP INI Editor.)
 8. First admin login: username Admin, password Admin123. Admin Settings will require you to change both before using the dashboard.
 9. Under Settings: free-delivery amount, shop WhatsApp number, top-of-site message.
-10. Manage product categories under Admin > Categories. Category photos (optional): save as assets/categories/<aisle-slug>.jpg, e.g. fresh-produce.jpg, beauty-hair.jpg, drinks.jpg. Without them the shop shows an icon.
+10. Manage product categories under Admin > Categories. Category photos (optional): open a category in Admin > Categories and use Add picture (square works best). Without one the shop shows an icon.
 11. SEO: after launch, add the site to Google Search Console and submit https://YOURDOMAIN/sitemap.xml. Claim and complete your Google Business Profile with the same address, phone number and opening hours as the website.
 12. Optional: replace assets/og.jpg with a 1200x630 picture of the shop. It is the image shown when the site is shared on WhatsApp and social media.

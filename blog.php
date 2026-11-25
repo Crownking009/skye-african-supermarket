@@ -11,7 +11,7 @@ if($slug!==''){
  <main class="wrap1 blog-article"><nav class="crumb"><a href="./">Home</a> / <a href="blog">Blog</a> / <?=e($post['title'])?></nav><article>
  <?php if($post['cover_image']): ?><img class="blog-cover" src="<?=e($post['cover_image'])?>" alt="" fetchpriority="high"><?php endif; ?>
  <div class="blog-copy"><p class="blog-date"><?=e(date('j F Y',strtotime($post['created_at'])))?></p><h1 class="ph1"><?=e($post['title'])?></h1><p class="blog-intro"><?=e($post['excerpt'])?></p>
- <?php foreach($paragraphs as $paragraph)if(trim($paragraph)!==''): ?><p><?=nl2br(e(trim($paragraph)))?></p><?php endforeach; ?>
+ <?php foreach($paragraphs as $paragraph): if(trim($paragraph)!==''): ?><p><?=nl2br(e(trim($paragraph)))?></p><?php endif; endforeach; ?>
  <a class="b1x" href="shop">Shop ingredients</a></div></article></main>
  <?php
 }else{
